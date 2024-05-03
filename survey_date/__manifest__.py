@@ -21,11 +21,13 @@
 
 {
     'name': 'Survey Date',
-    'version': '12.0.1',
+    'version': '17.0',
     'category': 'other',
     'license': 'AGPL-3',
     'summary': 'Adding start and stop date of survey',
-    'description': """""",
+    'description': """
+
+    """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
     'depends': ['survey', 'hr', 'crm'],
@@ -35,4 +37,3 @@
     ],
     'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

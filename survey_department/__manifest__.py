@@ -21,7 +21,7 @@
 
 {
     'name': 'Survey Department',
-    'version': '12.0.1',
+    'version': '17.0',
     'category': 'other',
     'license': 'AGPL-3',
     'summary': 'Restrict surveys to department members.',
