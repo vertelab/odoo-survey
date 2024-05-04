@@ -1,25 +1,19 @@
-# -*- coding: utf-8 -*-
-##############################################################################
-#
-#   www.vertel.se
-#
-##############################################################################
-
 {
-    'name': 'Survey Mail',
-    'version': '17.1',
+    "name": "Survey Mail",
+    "version": "17.0.1.0.0",
+    'summary': 'Adds better mail delivery',
     'category': 'Survey',
-    'licence': 'AGPL-3',
     'description': """
+Bridge module adding UX requirements to ease mass mailing of survey attendees.
 
     """,
-    'author': 'Vertel AB',
-    'website': 'http://www.vertel.se',
-    'depends': ['survey','barcodes', 'base_setup', 'mail', 'phone_validation', 'portal', 'utm'],
+    "author": "Vertel AB",
+    "license": "AGPL-3",
+    "website": "https://github.com/vertelab/odoo-survey",
+    "depends": ['survey','barcodes', 'base_setup', 'mail', 'phone_validation', 'portal', 'utm'],
     'data': [
-        # ~ 'views/survey_view.xml',
+        'views/survey_mail.xml',
        ],
-    'installable': True,
+    "installable": True,
+    "auto_install": False,
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

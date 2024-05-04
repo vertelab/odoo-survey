@@ -41,3 +41,26 @@ class SurveySurvey(models.Model):
 
     date_begin = fields.Date(string='Date Begin') # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
     date_end   = fields.Date(string='Date End') # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
+
+    def action_mass_mailing_attendees(self):
+        return {
+            'name': 'Mass Mail Attendees',
+            'type': 'ir.actions.act_window',
+            'res_model': 'mailing.mailing',
+            'view_mode': 'form',
+            'target': 'current',
+            'context': {
+                'default_mailing_model_id': self.env.ref('survey.model_survey_registration').id,
+                'default_mailing_domain': repr([('survey_id', 'in', self.ids), ('state', '!=', 'cancel')])
+            },
+        }
+
+    def action_invite_contacts(self):
+        return {
+            'name': 'Mass Mail Invitation',
+            'type': 'ir.actions.act_window',
+            'res_model': 'mailing.mailing',
+            'view_mode': 'form',
+            'target': 'current',
+            'context': {'default_mailing_model_id': self.env.ref('base.model_res_partner').id},
+        }

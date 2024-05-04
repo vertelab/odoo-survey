@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="survey_survey_view_form" model="ir.ui.view">
+            <field name="name">survey.template</field>
+            <field name="model">survey.survey</field>
+            <field name="inherit_id" ref="survey.survey_survey_view_form" />
+            <field name="arch" type="xml">
+                <field name="survey_type" position="after">
+                     <label for="is_template" class="col-lg-1" />
+
+                <field name="is_template" />
+                
+                </field>
+            </field>
+        </record>
+</odoo>
