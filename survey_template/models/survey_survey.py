@@ -30,7 +30,7 @@ from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, tools
 from odoo.tools import exception_to_unicode
 from odoo.tools.translate import _
-from odoo.exceptions import MissingError, ValidationError
+from odoo.exceptions import MissingError, ValidationError, UserError
 
 
 _logger = logging.getLogger(__name__)
@@ -51,31 +51,25 @@ class SurveySurvey(models.Model):
             else:
                 survey.display_name = survey.title
 
-
     def action_join(self,survey_ids):
         main_survey = survey_ids.filtered(lambda s: s.is_template == False)
-        if len(main_survey)>1:
+        if len(main_survey)==1:
             main_survey = main_survey[0]
+        elif len(main_survey)>1:
+            raise UserError(_(f"More than one non template"))
         elif not main_survey:
             raise UserError(_(f"Non template is missing"))
         for survey in survey_ids:
             if survey.id != main_survey.id:
-                main_survey = survey.copy()
-                # ~ for q in survey.question_and_page_ids:
-                    # ~ main_survey.question_and_page_ids = (0, 0, { # survey.question
-                        # ~ 'title': q.title,
-                        # ~ 'question_type': q.question_type,
-                        # ~ 'suggested_answer_ids': [(0, 0, { # survey.question.answer
-                                # ~ 'value': a.value,
-                                # ~ 'is_correct': a.is_correct,
-                                # ~ 'answer_score': a.answer_score,
-                            # ~ }) for a in q.suggested_answer_ids]
-                        # ~ })
+                tmp = survey.copy()
+                main_survey.question_and_page_ids = main_survey.question_and_page_ids + tmp.question_and_page_ids
+                tmp.unlink()
         return {  # Open the new survey
             'name': 'Survey',
             'type': 'ir.actions.act_window',
             'res_model': 'survey.survey',
             'view_mode': 'form',
+            'res_id': main_survey.id,
             'target': 'current',
             'context': {
                 # ~ 'default_survey_model_id': self.env.ref('survey.model_survey_registration').id,

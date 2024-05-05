@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution, third party addon
-#    Copyright (C) 2019 Vertel AB (<http://vertel.se>).
+#    Copyright (C) 2019-2024 Vertel AB (<http://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,17 +22,24 @@
 {
     'name': 'Survey Department',
     'version': '17.0',
-    'category': 'other',
+    'category': 'survey',
     'license': 'AGPL-3',
-    'summary': 'Restrict surveys to department members.',
-    'description': """""",
+    'summary': 'Add department on surveys',
+    'description': """
+        * Add department on survey
+        * My department filter
+        * My serveys filter
+        * Department grouping, search
+        
+        """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
-    'depends': ['survey', 'hr', 'crm'],
+    'depends': ['survey', 'hr',],
     'data': [
-        'survey_view.xml',
-        'security/survey_security.xml'
+        'views/survey_views.xml',
+#        'security/survey_security.xml'
     ],
     'installable': True,
+    'auto_install': True,
 }
 # vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
