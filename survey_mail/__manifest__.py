@@ -5,15 +5,18 @@
     'category': 'Survey',
     'description': """
 Bridge module adding UX requirements to ease mass mailing of survey attendees.
-
     """,
     "author": "Vertel AB",
     "license": "AGPL-3",
     "website": "https://github.com/vertelab/odoo-survey",
-    "depends": ['survey','barcodes', 'base_setup', 'mail', 'phone_validation', 'portal', 'utm'],
+    "depends": ['survey', 'barcodes', 'base_setup', 'mail', 'phone_validation', 'portal', 'utm', 'mass_mailing'],
     'data': [
+        'security/ir.model.access.csv',
         'views/survey_mail.xml',
-       ],
+        'views/survey_survey_view.xml',
+        'data/ir_cron_data.xml',
+        # 'views/survey_question_view.xml',
+   ],
     "installable": True,
     "auto_install": False,
 }

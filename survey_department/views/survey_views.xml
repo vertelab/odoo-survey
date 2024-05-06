@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <!-- Survey -->
-  <record id="survey_survey_view_form" model="ir.ui.view">
-    <field name="name">survey.department.form</field>
-    <field name="model">survey.survey</field>
-    <field name="inherit_id" ref="survey.survey_survey_view_form" />
-    <field name="arch" type="xml">
-      <field name="user_id" position="after">
-        <field name="department_id" />
-      </field>
-    </field>
-  </record>
-  <record id="survey_survey_view_tree" model="ir.ui.view">
-    <field name="name">survey.department.tree</field>
-    <field name="model">survey.survey</field>
-    <field name="inherit_id" ref="survey.survey_survey_view_tree" />
-    <field name="arch" type="xml">
-      <field name="user_id" position="after">
-        <field name="department_id" optional='visible' />
-      </field>
-    </field>
-  </record>
-  <record id="survey_survey_view_search" model="ir.ui.view">
-    <field name="name">survey.department.search</field>
-    <field name="model">survey.survey</field>
-    <field name="inherit_id" ref="survey.survey_survey_view_search" />
-    <field name="arch" type="xml">
-      <field name="user_id" position="after">
-        <field name="department_id" />
-      </field>
-      <filter name="not_certification" position="after">
-        <filter string="My Surveys" name="my_surveys" domain="[('user_id', '=', uid)]" />
-        <filter string="My Department" name="my_department" domain="[('department_id.user_ids', 'in', uid)]" />
-      </filter>
-      <filter name="group_by_responsible" position="after">
-        <filter string="Department" name="group_by_department" context="{'group_by': 'department_id'}" />
-      </filter>
-    </field>
-  </record>
+    <!-- Survey -->
+    <record id="survey_survey_view_form" model="ir.ui.view">
+        <field name="name">survey.department.form</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="department_id" />
+            </field>
+        </field>
+    </record>
 
+    <record id="survey_survey_view_tree" model="ir.ui.view">
+        <field name="name">survey.department.tree</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_tree" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="department_id" optional='visible' />
+            </field>
+        </field>
+    </record>
+
+    <record id="survey_survey_view_search" model="ir.ui.view">
+        <field name="name">survey.department.search</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_search" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="department_id" />
+            </field>
+            <filter name="not_certification" position="after">
+                <filter string="My Surveys" name="my_surveys" domain="[('user_id', '=', uid)]" />
+                <filter string="My Department" name="my_department" domain="[('department_id.user_ids', 'in', uid)]" />
+            </filter>
+            <filter name="group_by_responsible" position="after">
+                <filter string="Department" name="group_by_department" context="{'group_by': 'department_id'}" />
+            </filter>
+        </field>
+    </record>
 </odoo>

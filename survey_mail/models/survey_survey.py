@@ -39,8 +39,10 @@ _logger = logging.getLogger(__name__)
 class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
 
-    date_begin = fields.Date(string='Date Begin') # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
-    date_end   = fields.Date(string='Date End') # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
+    date_begin = fields.Date(string='Date Begin')
+    date_end = fields.Date(string='Date End')
+
+    survey_mail_ids = fields.One2many('survey.mail', 'survey_id', string="Communication")
 
     def action_mass_mailing_attendees(self):
         return {
@@ -50,7 +52,7 @@ class SurveySurvey(models.Model):
             'view_mode': 'form',
             'target': 'current',
             'context': {
-                'default_mailing_model_id': self.env.ref('survey.model_survey_registration').id,
+                'default_mailing_model_id': self.env.ref('survey.model_survey_question').id,
                 'default_mailing_domain': repr([('survey_id', 'in', self.ids), ('state', '!=', 'cancel')])
             },
         }

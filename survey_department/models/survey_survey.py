@@ -21,31 +21,38 @@
 
 from odoo import models, fields, api, _
 import logging
+
 _logger = logging.getLogger(__name__)
 
-    
+
 class Survey(models.Model):
     _inherit = 'survey.survey'
-    
+
     def _default_department_ids(self):
-        # ~ _logger.warn('\n\n_default_departments_ids\n%s\n' % self.env.context)
         return self.env.user.employee_ids.mapped('department_id')
-    
+
     department_id = fields.Many2one(comodel_name='hr.department', string='Department', default=_default_department_ids)
 
-class hr_department(models.Model):
+
+class HRDepartment(models.Model):
     _inherit = 'hr.department'
 
-    user_ids = fields.Many2many(comodel_name='res.users',string='Users',help="Users in this department",compute="_user_ids",store=True)
-    @api.depends('member_ids','manager_id')
-    def _user_ids(self):
-        self.user_ids = self.member_ids.mapped('user_id') + self.member_ids.child_ids.mapped('user_id') + self.manager_id
+    user_ids = fields.Many2many(comodel_name='res.users', string='Users', help="Users in this department",
+                                compute="_user_ids", store=True)
 
-class res_users(models.Model):
+    @api.depends('member_ids', 'manager_id')
+    def _user_ids(self):
+        for rec in self:
+            rec.user_ids = rec.member_ids.mapped('user_id') + rec.member_ids.child_ids.mapped(
+                'user_id') + rec.manager_id.mapped('user_id')
+
+
+class Users(models.Model):
     _inherit = 'res.users'
-    
+
     def _default_department_ids(self):
         # ~ _logger.warn('\n\n_default_departments_ids\n%s\n' % self.env.context)	
         return self.env.user.employee_ids.mapped('department_id')
-        
-    department_ids = fields.Many2many(comodel_name='hr.department', string='Department', default=_default_department_ids)
+
+    department_ids = fields.Many2many(comodel_name='hr.department', string='Department',
+                                      default=_default_department_ids)

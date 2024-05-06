@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_survey_form" model="ir.ui.view">
+        <field name="name">survey.view.form.mail</field>
+        <field name="model">survey.survey</field>
+        <field name="priority" eval="4"/>
+        <field name="inherit_id" ref="survey.survey_survey_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_send_survey']" position="before">
+                <field name="active" invisible="1"/>
+                <button name="action_invite_contacts" type="object" string="Invite"
+                        class="btn btn-primary"
+                        groups="mass_mailing.group_mass_mailing_user"
+                        invisible="not active"/>
+                <button name="action_invite_contacts" type="object" string="Invite"
+                        class="btn btn-secondary"
+                        groups="mass_mailing.group_mass_mailing_user"
+                        invisible="active"/>
+                <button name="action_mass_mailing_attendees" type="object" string="Contact Attendees"
+                        groups="mass_mailing.group_mass_mailing_user"
+                        invisible="not active"
+                />
+            </xpath>
+
+            <xpath expr="//page[last()]" position="after">
+                <page string="Communication" name="event_communication">
+                    <field name="survey_mail_ids">
+                        <tree string="Communication" editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="notification_type"/>
+                            <field name="template_model_id" column_invisible="True"/>
+                            <field name="template_ref" options="{'hide_model': True, 'no_quick_create': True}" context="{'filter_template_on_survey_user_input': True, 'default_model': 'survey.user_input'}"/>
+                            <field name="interval_nbr" readonly="interval_unit == 'now'"/>
+                            <field name="interval_unit"/>
+                            <field name="interval_type"/>
+                            <field name="scheduled_date" groups="base.group_no_one"/>
+                            <field name="mail_count_done"/>
+                            <field name="mail_state" widget="event_icon_selection" string=" " nolabel="1" options="{'sent': 'fa fa-check', 'scheduled': 'fa fa-hourglass-half', 'running': 'fa fa-cogs'}"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
