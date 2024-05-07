@@ -14,6 +14,8 @@ Bridge module adding UX requirements to ease mass mailing of survey attendees.
         'security/ir.model.access.csv',
         'views/survey_mail.xml',
         'views/survey_survey_view.xml',
+        'wizard/survery_participant_invite_view.xml',
+        'views/survey_user_input_view.xml',
         'data/ir_cron_data.xml',
         # 'views/survey_question_view.xml',
    ],

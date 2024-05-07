@@ -19,5 +19,7 @@ class SurveyUserInput(models.Model):
     _inherit = "survey.user_input"
     _mailing_enabled = True
 
+    survey_start_url = fields.Char('Survey URL', readonly=True)
+
     def _mailing_get_default_domain(self, mailing):
         return [('state', '!=', 'cancel')]

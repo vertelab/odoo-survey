@@ -52,8 +52,10 @@ class SurveySurvey(models.Model):
             'view_mode': 'form',
             'target': 'current',
             'context': {
-                'default_mailing_model_id': self.env.ref('survey.model_survey_question').id,
-                'default_mailing_domain': repr([('survey_id', 'in', self.ids), ('state', '!=', 'cancel')])
+                'default_mailing_model_id': self.env.ref('survey.model_survey_user_input').id,
+                'default_mailing_domain': repr([
+                    ('survey_id', 'in', self.ids), ('state', '=', 'new')
+                ])
             },
         }
 
@@ -64,5 +66,22 @@ class SurveySurvey(models.Model):
             'res_model': 'mailing.mailing',
             'view_mode': 'form',
             'target': 'current',
-            'context': {'default_mailing_model_id': self.env.ref('base.model_res_partner').id},
+            'context': {
+                'default_mailing_model_id': self.env.ref('survey.model_survey_user_input').id,
+                'default_mailing_domain': repr([('survey_id', 'in', self.ids), ('state', '=', 'new')])
+            },
+        }
+
+    def action_invite_participants(self):
+        local_context = dict(
+            self.env.context,
+            default_survey_id=self.id,
+        )
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _("Invite Participant"),
+            'view_mode': 'form',
+            'res_model': 'survey.participant.invite',
+            'target': 'new',
+            'context': local_context,
         }

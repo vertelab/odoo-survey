@@ -20,6 +20,7 @@
                         groups="mass_mailing.group_mass_mailing_user"
                         invisible="not active"
                 />
+                <button name="action_invite_participants" string="Invite Participants" type="object" class="oe_highlight" invisible="not active"/>
             </xpath>
 
             <xpath expr="//page[last()]" position="after">
