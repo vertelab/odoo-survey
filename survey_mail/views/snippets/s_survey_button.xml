@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_survey_invitation_button" name="Survey Invitation Button">
+        <div class="s_survey_invitation o_mail_block_survey_invitation o_mail_snippet_general pt0 pb16">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 pt16">
+                        <div style="text-align: center;" id="survey_button">
+                            <a role="button" t-attf-href="#" class="btn btn-primary" id="survey_button_url">
+                                Start Survey
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

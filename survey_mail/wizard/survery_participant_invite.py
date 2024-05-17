@@ -31,9 +31,26 @@ class SurveyParticipantInvite(models.TransientModel):
                      ('user_ids', '!=', False), \
             ]"
     )
+    mailing_model_id = fields.Many2one(
+        'ir.model', string='Recipients Model',
+        ondelete='cascade', required=True,
+        domain=[('is_mailing_enabled', '=', True), ('model', 'in', ['res.partner', 'mailing.list'])],
+        default=lambda self: self.env.ref('mass_mailing.model_mailing_list').id)
+    mailing_on_mailing_list = fields.Boolean(
+        string='Based on Mailing Lists',
+        compute='_compute_mailing_on_mailing_list')
+
+    @api.depends('mailing_model_id')
+    def _compute_mailing_on_mailing_list(self):
+        mailing_list_model_id = self.env['ir.model']._get('mailing.list')
+        self.mailing_on_mailing_list = False
+        self.filtered(lambda m: m.mailing_model_id == mailing_list_model_id).mailing_on_mailing_list = True
+
+    contact_list_ids = fields.Many2many('mailing.list', 'survey_mass_mailing_list_rel', string='Mailing Lists')
+
     existing_partner_ids = fields.Many2many(
         'res.partner', compute='_compute_existing_partner_ids', readonly=True, store=False)
-    emails = fields.Text(string='Additional emails')
+    emails = fields.Text(string='Additional emails', compute='_compute_email', inverse='_inverse_email')
     existing_emails = fields.Text(
         'Existing emails', compute='_compute_existing_emails',
         readonly=True, store=False)
@@ -48,6 +65,22 @@ class SurveyParticipantInvite(models.TransientModel):
     survey_users_login_required = fields.Boolean(related="survey_id.users_login_required", readonly=True)
     survey_users_can_signup = fields.Boolean(related='survey_id.users_can_signup')
     deadline = fields.Datetime(string="Answer deadline")
+
+    @api.depends('contact_list_ids')
+    def _compute_email(self):
+        for rec in self:
+            if rec.contact_list_ids:
+                rec.emails = ','.join(
+                    contact_email for contact_email in rec.contact_list_ids.contact_ids.filtered(
+                        lambda contact: not contact.opt_out
+                    ).mapped('email')
+                )
+            else:
+                rec.emails = False
+
+    def _inverse_email(self):
+        for rec in self:
+            pass
 
     @api.depends('partner_ids', 'survey_id')
     def _compute_existing_partner_ids(self):
@@ -72,7 +105,7 @@ class SurveyParticipantInvite(models.TransientModel):
 
     @api.onchange('emails')
     def _onchange_emails(self):
-        if self.emails and (self.survey_users_login_required and not self.survey_id.users_can_signup):
+        if False and self.emails and (self.survey_users_login_required and not self.survey_id.users_can_signup):
             raise UserError(
                 _('This survey does not allow external people to participate. You should create user accounts or '
                   'update survey access mode accordingly.'))
@@ -134,12 +167,19 @@ class SurveyParticipantInvite(models.TransientModel):
             raise UserError(_("Please enter at least one valid recipient."))
 
         self._prepare_answers(valid_partners, valid_emails)
-        # for answer in answers:
-        #     self._send_mail(answer)
 
-        # print("valid_partners", valid_partners)
-
-        # survey_link = f"{self.survey_start_url}?access_token={self.t}"
+        if self.mailing_model_id.model == 'res.partner':
+            domain_to_apply = [
+                    ('survey_id', 'in', self.survey_id.ids),
+                    ('state', '=', 'new'),
+                    ('partner_id', 'in', valid_partners.ids)
+                ]
+        else:
+            domain_to_apply = [
+                ('survey_id', 'in', self.survey_id.ids),
+                ('state', '=', 'new'),
+                ('email', 'in', valid_emails),
+            ]
 
         return {
             'name': 'Mass Mail Invitation',
@@ -150,10 +190,7 @@ class SurveyParticipantInvite(models.TransientModel):
             'context': {
                 'default_mailing_model_id': self.env.ref('survey.model_survey_user_input').id,
                 'default_body_html': '<p>Hello, <br/> Here is your survey link <t t-out="object.survey_start_url"/></p>',
-                'default_mailing_domain': repr([
-                    ('survey_id', 'in', self.survey_id.ids),
-                    ('state', '=', 'new'), ('partner_id', 'in', valid_partners.ids)
-                ])
+                'default_mailing_domain': repr(domain_to_apply)
             },
         }
 
