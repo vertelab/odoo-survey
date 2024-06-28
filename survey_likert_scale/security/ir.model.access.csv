@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+survey_likert_scale.access_likert_scale_template,access_likert_scale_template,survey_likert_scale.model_likert_scale_template,base.group_user,1,1,1,1
+survey_likert_scale.access_likert_scale_template_options,access_likert_scale_template_options,survey_likert_scale.model_likert_scale_template_options,base.group_user,1,1,1,1
