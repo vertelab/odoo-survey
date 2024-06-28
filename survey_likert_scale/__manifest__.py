@@ -14,6 +14,7 @@ Template for Likert Scale.
         'security/ir.model.access.csv',
         'views/likert_scale_view.xml',
         'views/survey_question_view.xml',
+        'data/data.xml',
    ],
     "installable": True,
     "auto_install": False,
