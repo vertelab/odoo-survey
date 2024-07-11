@@ -50,6 +50,20 @@ class SurveySurvey(models.Model):
                 survey.display_name = _("[TEMPLATE] %s" % survey.title)
             else:
                 survey.display_name = survey.title
+    
+    def new_from_template(self):
+        new_template = self.copy()
+        new_template.is_template = False
+        return {  # Open the new survey
+            'name': 'Survey',
+            'type': 'ir.actions.act_window',
+            'res_model': 'survey.survey',
+            'view_mode': 'form',
+            'res_id': new_template.id,
+            'target': 'current',
+            'context': {
+            },
+        }
 
     def action_join(self,survey_ids):
         main_survey = survey_ids.filtered(lambda s: s.is_template == False)
