@@ -30,7 +30,7 @@
             <field name="inherit_id" ref="website_slides.slide_channel_view_kanban"/>
             <field name="arch" type="xml">
                    <div name="info_avg_rating" position="after">
-                        <div class="d-flex" name="info_manual_review_count" t-if="record.rating_count.raw_value">
+                        <div class="d-flex" name="info_manual_review_count" t-if="record.surveys_manual_review_count.raw_value">
                             <a name="action_show_surveys" type="object" class="me-auto"><field name="surveys_manual_review_count"/> Inlämningar</a>
                         </div>
                    </div>
