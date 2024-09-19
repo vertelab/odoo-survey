@@ -20,10 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'Survey Department',
-    'version': '17.0',
-    'category': 'survey',
-    'license': 'AGPL-3',
+    'name': 'Survey: Department',
     'summary': 'Add department on surveys',
     'description': """
         * Add department on survey
@@ -32,8 +29,17 @@
         * Department grouping, search
         
         """,
+    'version': '1.0',
+    'category': 'Survey',
+    'license': 'AGPL-3',
     'author': 'Vertel AB',
-    'website': 'http://www.vertel.se',
+    'maintainer': 'Vertel AB',
+    'contributor': '',
+    'website': "https://vertel.se/apps/odoo-survey/survey_department",
+    'images': ['/static/description/banner.png'], # 560x280 px.
+    'repository': 'https://github.com/vertelab/odoo-survey',
+    # Any module necessary for this one to work correctly
+    
     'depends': ['survey', 'hr',],
     'data': [
         'views/survey_views.xml',
