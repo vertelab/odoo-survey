@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Survey for Leads and Phone-calls',
-    'version': '17.0',
+    'name': 'Survey: for Leads and Phone-calls',
+    'version': '1.0',
     'category': 'Sales',
     'description': """
 
