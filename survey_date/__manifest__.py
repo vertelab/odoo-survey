@@ -22,14 +22,21 @@
 {
     'name': 'Survey: Date',
     'version': '1.0',
-    'category': 'other',
-    'license': 'AGPL-3',
+    'category': 'Sales',
     'summary': 'Adding start and stop date of survey',
     'description': """
 
     """,
+    'category': 'Sales',
+    'license': 'AGPL-3',
     'author': 'Vertel AB',
-    'website': 'http://www.vertel.se',
+    'maintainer': 'Vertel AB',
+    'contributor': '',
+    'website': "https://vertel.se/apps/odoo-survey/survey_date",
+    'images': ['/static/description/banner.png'], # 560x280 px.
+    'repository': 'https://github.com/vertelab/odoo-survey',
+    # Any module necessary for this one to work correctly
+    
     'depends': ['survey', 'hr', 'crm'],
     'data': [
         'survey_date_view.xml',
