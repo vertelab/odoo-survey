@@ -22,16 +22,22 @@
 {
     'name': 'Survey: for Leads and Phone-calls',
     'version': '1.0',
-    'category': 'Sales',
     'description': """
 
 
 
 Financed by Netprospekt
 """,
-    'author': 'Vertel AB',
+    'category': 'Sales',
     'license': 'AGPL-3',
-    'website': 'http://www.vertel.se',
+    'author': 'Vertel AB',
+    'maintainer': 'Vertel AB',
+    'contributor': '',
+    'website': "https://vertel.se/apps/odoo-survey/survey_crm_lead",
+    'images': ['/static/description/banner.png'], # 560x280 px.
+    'repository': 'https://github.com/vertelab/odoo-survey',
+    # Any module necessary for this one to work correctly
+    
     'depends': ['crm_phonecall', 'survey'],
     'data': [
         'crm_view.xml',
