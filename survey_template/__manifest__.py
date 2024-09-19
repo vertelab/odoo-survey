@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    "name": "Survey: Template",
-    "version": "17.0.1.0.0",
+    'name': 'Survey: Template',
+    'version': "17.0.1.0.0',
     'summary': 'Adds better template handling ',
     'description': """
 
