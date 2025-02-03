@@ -12,11 +12,11 @@
                     <notebook groups="base.group_no_one">
                         <page string="Options" name="likert_scale_options">
                             <field name="option_ids">
-                                <tree string="Options" editable="bottom">
+                                <list string="Options" editable="bottom">
                                     <field name="sequence" widget="handle"/>
                                     <field name="option" />
                                     <field name="score" />
-                                </tree>
+                                </list>
                             </field>
                         </page>
                     </notebook>
@@ -29,16 +29,16 @@
         <field name="name">likert.scale.template.tree</field>
         <field name="model">likert.scale.template</field>
         <field name="arch" type="xml">
-            <tree string="Likert Scale Template">
+            <list string="Likert Scale Template">
                 <field name="name" />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="action_likert_scale">
         <field name="name">Likert Scale Template</field>
         <field name="res_model">likert.scale.template</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" ref="view_likert_scale_tree"/>
     </record>
 

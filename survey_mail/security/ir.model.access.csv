@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 survey_mail.access_survey_mail,access_survey_mail,survey_mail.model_survey_mail,base.group_user,1,1,1,1
 survey_mail.access_survey_mail_registration,access_survey_mail_registration,survey_mail.model_survey_mail_registration,base.group_user,1,1,1,1
 survey_mail.access_survey_participant_invite,access_survey_participant_invite,survey_mail.model_survey_participant_invite,base.group_user,1,1,1,1
+survey_mail.access_survey_type_mail,access_survey_type_mail,survey_mail.model_survey_type_mail,base.group_user,1,1,1,1

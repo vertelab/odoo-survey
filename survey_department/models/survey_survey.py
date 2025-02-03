@@ -51,7 +51,6 @@ class Users(models.Model):
     _inherit = 'res.users'
 
     def _default_department_ids(self):
-        # ~ _logger.warn('\n\n_default_departments_ids\n%s\n' % self.env.context)	
         return self.env.user.employee_ids.mapped('department_id')
 
     department_ids = fields.Many2many(comodel_name='hr.department', string='Department',

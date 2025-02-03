@@ -32,22 +32,24 @@ from odoo.tools import exception_to_unicode
 from odoo.tools.translate import _
 from odoo.exceptions import MissingError, ValidationError
 
-
 _logger = logging.getLogger(__name__)
 
 _INTERVALS = {
     'hours': lambda interval: relativedelta(hours=interval),
     'days': lambda interval: relativedelta(days=interval),
-    'weeks': lambda interval: relativedelta(days=7*interval),
+    'weeks': lambda interval: relativedelta(days=7 * interval),
     'months': lambda interval: relativedelta(months=interval),
     'now': lambda interval: relativedelta(hours=0),
 }
 
+
 class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
 
-    date_begin = fields.Date(string='Date Begin') # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
-    date_end   = fields.Date(string='Date End') # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
+    date_begin = fields.Date(
+        string='Date Begin')  # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
+    date_end = fields.Date(
+        string='Date End')  # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
 
 
 class SurveyMail(models.Model):
@@ -61,7 +63,7 @@ class SurveyMail(models.Model):
         return [('mail.template', 'Mail')]
 
     survey_id = fields.Many2one(comodel_name='survey.survey', string='Survey',
-        ondelete='cascade', required=True)
+                                ondelete='cascade', required=True)
     notification_type = fields.Selection([('mail', 'Mail')], string='Send', default='mail', required=True)
     interval_nbr = fields.Integer('Interval', default=1)
     interval_unit = fields.Selection([
@@ -74,7 +76,8 @@ class SurveyMail(models.Model):
         ('before_survey', 'Before the survey'),
         ('after_survey', 'After the survey')],
         string='Trigger', default="before_survey", required=True)
-    template_model_id = fields.Many2one('ir.model', string='Template Model', compute='_compute_template_model_id', compute_sudo=True)
+    template_model_id = fields.Many2one('ir.model', string='Template Model', compute='_compute_template_model_id',
+                                        compute_sudo=True)
     template_ref = fields.Reference(string='Template', selection='_selection_template_model', required=True)
 
     @api.depends('notification_type')
@@ -85,7 +88,8 @@ class SurveyMail(models.Model):
 
     def _prepare_survey_mail_values(self):
         self.ensure_one()
-        return namedtuple("MailValues", ['notification_type', 'interval_nbr', 'interval_unit', 'interval_type', 'template_ref'])(
+        return namedtuple("MailValues",
+                          ['notification_type', 'interval_nbr', 'interval_unit', 'interval_type', 'template_ref'])(
             self.notification_type,
             self.interval_nbr,
             self.interval_unit,
@@ -93,7 +97,8 @@ class SurveyMail(models.Model):
             '%s,%i' % (self.template_ref._name, self.template_ref.id)
         )
 
-class surveyMailScheduler(models.Model):
+
+class SurveyMailScheduler(models.Model):
     """ survey automated mailing. This model replaces all existing fields and
     configuration allowing to send emails on surveys since Odoo 9. A cron exists
     that periodically checks for mailing to run. """
@@ -139,7 +144,8 @@ class surveyMailScheduler(models.Model):
         [('running', 'Running'), ('scheduled', 'Scheduled'), ('sent', 'Sent')],
         string='Global communication Status', compute='_compute_mail_state')
     mail_count_done = fields.Integer('# Sent', copy=False, readonly=True)
-    template_model_id = fields.Many2one('ir.model', string='Template Model', compute='_compute_template_model_id', compute_sudo=True)
+    template_model_id = fields.Many2one('ir.model', string='Template Model', compute='_compute_template_model_id',
+                                        compute_sudo=True)
     template_ref = fields.Reference(string='Template', selection='_selection_template_model', required=True)
 
     @api.depends('notification_type')
@@ -158,7 +164,8 @@ class surveyMailScheduler(models.Model):
             else:
                 date, sign = scheduler.survey_id.date_end, 1
 
-            scheduler.scheduled_date = date.replace(microsecond=0) + _INTERVALS[scheduler.interval_unit](sign * scheduler.interval_nbr) if date else False
+            scheduler.scheduled_date = date.replace(microsecond=0) + _INTERVALS[scheduler.interval_unit](
+                sign * scheduler.interval_nbr) if date else False
 
     @api.depends('interval_type', 'scheduled_date', 'mail_done')
     def _compute_mail_state(self):
@@ -180,7 +187,8 @@ class surveyMailScheduler(models.Model):
         for record in self.filtered('template_ref'):
             model = model_map[record.notification_type]
             if record.template_ref._name != model:
-                raise ValidationError(_('The template which is referenced should be coming from %(model_name)s model.', model_name=model))
+                raise ValidationError(
+                    _('The template which is referenced should be coming from %(model_name)s model.', model_name=model))
 
     def execute(self):
         for scheduler in self:
@@ -212,12 +220,14 @@ class surveyMailScheduler(models.Model):
                 if not scheduler.template_ref:
                     continue
                 # do not send emails if the mailing was scheduled before the survey but the survey is over
-                if scheduler.scheduled_date <= now and (scheduler.interval_type != 'before_survey' or scheduler.survey_id.date_end > now):
+                if scheduler.scheduled_date <= now and (
+                        scheduler.interval_type != 'before_survey' or scheduler.survey_id.date_end > now):
                     scheduler.survey_id.mail_attendees(scheduler.template_ref.id)
                     # Mail is sent to all attendees (unconfirmed as well), so count all attendees
                     scheduler.update({
                         'mail_done': True,
-                        'mail_count_done': len(scheduler.survey_id.registration_ids.filtered(lambda r: r.state != 'cancel'))
+                        'mail_count_done': len(
+                            scheduler.survey_id.registration_ids.filtered(lambda r: r.state != 'cancel'))
                     })
         return True
 
@@ -234,7 +244,8 @@ class surveyMailScheduler(models.Model):
 
     def _prepare_survey_mail_values(self):
         self.ensure_one()
-        return namedtuple("MailValues", ['notification_type', 'interval_nbr', 'interval_unit', 'interval_type', 'template_ref'])(
+        return namedtuple("MailValues",
+                          ['notification_type', 'interval_nbr', 'interval_unit', 'interval_type', 'template_ref'])(
             self.notification_type,
             self.interval_nbr,
             self.interval_unit,
@@ -308,7 +319,7 @@ You receive this email because you are:
         return True
 
 
-class surveyMailRegistration(models.Model):
+class SurveyMailRegistration(models.Model):
     _name = 'survey.mail.registration'
     _description = 'Registration Mail Scheduler'
     _rec_name = 'scheduler_id'
@@ -322,11 +333,11 @@ class surveyMailRegistration(models.Model):
     def execute(self):
         now = fields.Datetime.now()
         todo = self.filtered(lambda reg_mail:
-            not reg_mail.mail_sent and \
-            reg_mail.registration_id.state in ['open', 'done'] and \
-            (reg_mail.scheduled_date and reg_mail.scheduled_date <= now) and \
-            reg_mail.scheduler_id.notification_type == 'mail'
-        )
+                             not reg_mail.mail_sent and \
+                             reg_mail.registration_id.state in ['open', 'done'] and \
+                             (reg_mail.scheduled_date and reg_mail.scheduled_date <= now) and \
+                             reg_mail.scheduler_id.notification_type == 'mail'
+                             )
         done = self.browse()
         for reg_mail in todo:
             organizer = reg_mail.scheduler_id.survey_id.organizer_id
@@ -349,7 +360,9 @@ class surveyMailRegistration(models.Model):
                 pass
 
             if not template:
-                _logger.warning("Cannot process ticket %s, because Mail Scheduler %s has reference to non-existent template", reg_mail.registration_id, reg_mail.scheduler_id)
+                _logger.warning(
+                    "Cannot process ticket %s, because Mail Scheduler %s has reference to non-existent template",
+                    reg_mail.registration_id, reg_mail.scheduler_id)
                 continue
 
             if not template.email_from:
@@ -362,6 +375,7 @@ class surveyMailRegistration(models.Model):
     def _compute_scheduled_date(self):
         for mail in self:
             if mail.registration_id:
-                mail.scheduled_date = mail.registration_id.create_date.replace(microsecond=0) + _INTERVALS[mail.scheduler_id.interval_unit](mail.scheduler_id.interval_nbr)
+                mail.scheduled_date = mail.registration_id.create_date.replace(microsecond=0) + _INTERVALS[
+                    mail.scheduler_id.interval_unit](mail.scheduler_id.interval_nbr)
             else:
                 mail.scheduled_date = False

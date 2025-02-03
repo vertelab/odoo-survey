@@ -25,7 +25,7 @@
     'description': """
         * Add department on survey
         * My department filter
-        * My serveys filter
+        * My survey filter
         * Department grouping, search
         
         """,
@@ -36,14 +36,14 @@
     'maintainer': 'Vertel AB',
     'contributor': '',
     'website': "https://vertel.se/apps/odoo-survey/survey_department",
-    'images': ['/static/description/banner.png'], # 560x280 px.
+    'images': ['/static/description/banner.png'],  # 560x280 px.
     'repository': 'https://github.com/vertelab/odoo-survey',
     # Any module necessary for this one to work correctly
     
     'depends': ['survey', 'hr',],
     'data': [
         'views/survey_views.xml',
-#        'security/survey_security.xml'
+        # 'security/survey_security.xml'
     ],
     'installable': True,
     'auto_install': True,
