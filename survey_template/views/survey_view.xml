@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="survey.survey_survey_view_form" />
         <field name="arch" type="xml">
             <field name="survey_type" position="after">
-<label for="is_template" string="Är mall"/>
+                <label for="is_template" string="Är mall"/>
                 <field name="is_template" />
             </field>
             <button name="action_send_survey" position="after">
@@ -14,6 +14,7 @@
              </button>
         </field>
     </record>
+
     <record id="survey_survey_view_tree" model="ir.ui.view">
         <field name="name">survey.template</field>
         <field name="model">survey.survey</field>
@@ -24,6 +25,7 @@
             </field>
         </field>
     </record>
+
     <record id="survey_survey_view_kanban" model="ir.ui.view">
         <field name="name">survey.template</field>
         <field name="model">survey.survey</field>
@@ -39,6 +41,7 @@
             </xpath>
         </field>
     </record>
+
     <record id="survey_survey_view_search" model="ir.ui.view">
         <field name="name">survey.template</field>
         <field name="model">survey.survey</field>

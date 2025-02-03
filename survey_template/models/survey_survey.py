@@ -32,14 +32,12 @@ from odoo.tools import exception_to_unicode
 from odoo.tools.translate import _
 from odoo.exceptions import MissingError, ValidationError, UserError
 
-
 _logger = logging.getLogger(__name__)
 
 
 class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
-    
-    
+
     is_template = fields.Boolean(string='Is Template')
     display_name = fields.Char('Name', compute='_compute_display_name', readonly=True)
 
@@ -50,7 +48,7 @@ class SurveySurvey(models.Model):
                 survey.display_name = _("[TEMPLATE] %s" % survey.title)
             else:
                 survey.display_name = survey.title
-    
+
     def new_from_template(self):
         new_template = self.copy()
         new_template.is_template = False
@@ -65,11 +63,11 @@ class SurveySurvey(models.Model):
             },
         }
 
-    def action_join(self,survey_ids):
-        main_survey = survey_ids.filtered(lambda s: s.is_template == False)
-        if len(main_survey)==1:
+    def action_join(self, survey_ids):
+        main_survey = survey_ids.filtered(lambda s: not s.is_template)
+        if len(main_survey) == 1:
             main_survey = main_survey[0]
-        elif len(main_survey)>1:
+        elif len(main_survey) > 1:
             raise UserError(_(f"More than one non template"))
         elif not main_survey:
             raise UserError(_(f"Non template is missing"))
@@ -78,15 +76,11 @@ class SurveySurvey(models.Model):
                 tmp = survey.copy()
                 main_survey.question_and_page_ids = main_survey.question_and_page_ids + tmp.question_and_page_ids
                 tmp.unlink()
-        return {  # Open the new survey
+        return {
             'name': 'Survey',
             'type': 'ir.actions.act_window',
             'res_model': 'survey.survey',
             'view_mode': 'form',
             'res_id': main_survey.id,
             'target': 'current',
-            'context': {
-                # ~ 'default_survey_model_id': self.env.ref('survey.model_survey_registration').id,
-                # ~ 'default_mailing_domain': repr([('survey_id', 'in', self.ids), ('state', '!=', 'cancel')])
-            },
         }

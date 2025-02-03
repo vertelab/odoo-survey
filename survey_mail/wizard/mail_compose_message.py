@@ -11,14 +11,6 @@ from odoo.tools.misc import file_open
 class MailComposeMessage(models.TransientModel):
     _inherit = 'mail.compose.message'
 
-    def _survey_tracking_url(self, url):
-        parsed = werkzeug.urls.url_parse(url, scheme='http')
-
-        # if parsed.scheme.startswith('http') and parsed.path.startswith('/r/'):
-        #     new_href = href.replace(url, url + '/m/' + str(self.mailing_trace_ids[0].id))
-
-        tracking_url = self._get_tracking_url()
-
     def _prepare_mail_values(self, res_ids):
         """ When being in mass mailing mode, add 'mailing.trace' values directly
         in the o2m field of mail.mail. """
