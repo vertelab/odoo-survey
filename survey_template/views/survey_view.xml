@@ -19,7 +19,7 @@
         <field name="model">survey.survey</field>
         <field name="inherit_id" ref="survey.survey_survey_view_tree" />
         <field name="arch" type="xml">
-            <field name="title" position="replace">
+            <field name="title" position="after">
                 <field name="display_name" />
             </field>
         </field>

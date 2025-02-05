@@ -9,9 +9,9 @@
                 <field name="description" position="attributes">
                     <attribute name="options">{'collaborative': true, 'resizable': false}</attribute>
                 </field>
-                <button name="action_test_survey" position="after">
-                    <button name="action_preview_custom_survey" string="Custom Survey Preview" class="btn-primary" type="object"/>
-                </button>
+<!--                <button name="action_test_survey" position="after">-->
+<!--                    <button name="action_preview_custom_survey" string="Custom Survey Preview" class="btn-primary" type="object"/>-->
+<!--                </button>-->
             </field>
         </record>
 
@@ -27,9 +27,9 @@
                 <field name="question_type" position="before">
                     <field name="color" widget="color_picker"/>
                 </field>
-<!--                <xpath expr="//page[@name='answers']/field[@name='suggested_answer_ids']/list/field[@name='value']" position="after">-->
-<!--                    <field name="color" widget="color_picker"/>-->
-<!--                </xpath>-->
+                <xpath expr="//page[@name='answers']//field[@name='suggested_answer_ids']/tree/field[@name='value']" position="after">
+                    <field name="color" widget="color_picker"/>
+                </xpath>
             </field>
         </record>
 
