@@ -11,16 +11,18 @@
                 <button name="action_invite_contacts" type="object" string="Invite"
                         class="btn btn-primary"
                         groups="mass_mailing.group_mass_mailing_user"
-                        invisible="not active"/>
+                        attrs="{'invisible': [('active', '=', False)]}"
+                />
                 <button name="action_invite_contacts" type="object" string="Invite"
                         class="btn btn-secondary"
                         groups="mass_mailing.group_mass_mailing_user"
-                        invisible="active"/>
+                        attrs="{'invisible': [('active', '=', True)]}"
+                />
                 <button name="action_mass_mailing_attendees" type="object" string="Contact Attendees"
                         groups="mass_mailing.group_mass_mailing_user"
-                        invisible="not active"
+                        attrs="{'invisible': [('active', '=', False)]}"
                 />
-                <button name="action_invite_participants" string="Invite Participants" type="object" class="oe_highlight" invisible="not active"/>
+                <button name="action_invite_participants" string="Invite Participants" type="object" class="oe_highlight" attrs="{'invisible': [('active', '=', False)]}"/>
             </xpath>
 
             <xpath expr="//page[last()]" position="after">
@@ -31,7 +33,7 @@
                             <field name="notification_type"/>
                             <field name="template_model_id" column_invisible="True"/>
                             <field name="template_ref" options="{'hide_model': True, 'no_quick_create': True}" context="{'filter_template_on_survey_user_input': True, 'default_model': 'survey.user_input'}"/>
-                            <field name="interval_nbr" readonly="interval_unit == 'now'"/>
+                            <field name="interval_nbr" attrs="{'required': [('interval_unit', '=', 'now')]}"/>
                             <field name="interval_unit"/>
                             <field name="interval_type"/>
                             <field name="scheduled_date" groups="base.group_no_one"/>

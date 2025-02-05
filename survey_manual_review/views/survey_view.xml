@@ -29,7 +29,7 @@
             <field name="model">slide.channel</field>
             <field name="inherit_id" ref="website_slides.slide_channel_view_kanban"/>
             <field name="arch" type="xml">
-                   <div name="info_avg_rating" position="after">
+                   <div name="info_total_time" position="after">
                         <div class="d-flex" name="info_manual_review_count" t-if="record.surveys_manual_review_count.raw_value">
                             <a name="action_show_surveys" type="object" class="me-auto"><field name="surveys_manual_review_count"/> Inlämningar</a>
                         </div>
@@ -43,11 +43,11 @@
             <field name="inherit_id" ref="survey.survey_user_input_view_form"/>
             <field name="arch" type="xml">
                <button name="action_print_answers" position="after">
-                  <button name="mark_manual_done" invisible="needs_manual_review == False or manually_reviewed == True" string="Mark as Done" type="object" class="oe_highlight"/>
+                  <button name="mark_manual_done" attrs="{'invisible': ['|', ('needs_manual_review', '=', False), ('manually_reviewed', '=', True)]}" string="Mark as Done" type="object" class="oe_highlight"/>
                </button>
                <field name="scoring_type" position="after">
                    <field name="needs_manual_review" invisible="1"/>
-                   <field name="manually_reviewed" invisible="needs_manual_review == False"/>
+                   <field name="manually_reviewed" attrs="{'invisible': [('needs_manual_review', '=', False)]}"/>
                </field>
             </field>
          </record>

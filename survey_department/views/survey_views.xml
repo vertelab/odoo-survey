@@ -28,7 +28,7 @@
         <field name="model">survey.survey</field>
         <field name="inherit_id" ref="survey.survey_survey_view_search" />
         <field name="arch" type="xml">
-            <field name="user_id" position="after">
+            <field name="title" position="after">
                 <field name="department_id" />
             </field>
             <filter name="not_certification" position="after">
