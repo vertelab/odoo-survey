@@ -39,7 +39,7 @@
     'repository': 'https://github.com/vertelab/odoo-survey',
     # Any module necessary for this one to work correctly
 
-    "depends": ['survey', 'portal'],
+    "depends": ['survey', 'portal', 'website'],
     'data': [
         'views/survey_survey_view.xml',
         'views/survey_templates.xml',
