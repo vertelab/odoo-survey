@@ -37,13 +37,13 @@
     'repository': 'https://github.com/vertelab/odoo-survey',
     # Any module necessary for this one to work correctly
 
-    "depends": ['survey'],
+    "depends": ['survey', 'survey_template'],
     'data': [
         'security/ir.model.access.csv',
         'views/likert_scale_view.xml',
         'views/survey_question_view.xml',
         'data/data.xml',
-   ],
+    ],
     "installable": True,
     "auto_install": False,
 }
