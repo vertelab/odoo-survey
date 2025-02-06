@@ -9,9 +9,6 @@
                 <field name="description" position="attributes">
                     <attribute name="options">{'collaborative': true, 'resizable': false}</attribute>
                 </field>
-<!--                <button name="action_test_survey" position="after">-->
-<!--                    <button name="action_preview_custom_survey" string="Custom Survey Preview" class="btn-primary" type="object"/>-->
-<!--                </button>-->
             </field>
         </record>
 
