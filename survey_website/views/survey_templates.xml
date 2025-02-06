@@ -32,11 +32,11 @@
         </xpath>
     </template>
 
-    <template id="question_simple_choice" inherit_id="survey.question_simple_choice">
-        <xpath expr="//div[@t-att-data-name='question.id']/div[1]/t[@t-foreach='question.suggested_answer_ids']/label[1]/span[@t-field='label.value']" position="replace">
-            <span class="ms-2 text-break" t-field='label.value' t-att-style="'color: ' + label.get_color()"/>
-        </xpath>
-    </template>
+<!--    <template id="question_simple_choice" inherit_id="survey.question_simple_choice">-->
+<!--        <xpath expr="//div[@t-att-data-name='question.id']/div[1]/t[@t-foreach='question.suggested_answer_ids']/label[1]/span[@t-field='label.value']" position="replace">-->
+<!--            <span class="ms-2 text-break" t-field='label.value' t-att-style="'color: ' + label.get_color()"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
 
     <template id="survey.question_suggested_value_image">
         <t t-if="label.value_image">
