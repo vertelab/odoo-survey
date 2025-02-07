@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="survey_survey_view_form" model="ir.ui.view">
+            <field name="name">survey.template</field>
+            <field name="model">survey.survey</field>
+            <field name="inherit_id" ref="survey.survey_survey_view_form" />
+            <field name="arch" type="xml">
+                <field name="description" position="attributes">
+                    <attribute name="options">{'collaborative': true, 'resizable': false}</attribute>
+                </field>
+                <button name="action_test_survey" position="after">
+                    <button name="action_preview_custom_survey" string="Custom Survey Preview" class="btn-primary" type="object"/>
+                </button>
+            </field>
+        </record>
+
+
+        <record id="survey_question_form" model="ir.ui.view">
+            <field name="name">survey.question.form</field>
+            <field name="model">survey.question</field>
+            <field name="inherit_id" ref="survey.survey_question_form" />
+            <field name="arch" type="xml">
+                <field name="description" position="attributes">
+                    <attribute name="options">{'collaborative': true, 'resizable': false}</attribute>
+                </field>
+                <field name="question_type" position="before">
+                    <field name="color" widget="color_picker"/>
+                </field>
+                <xpath expr="//page[@name='answers']/field[@name='suggested_answer_ids']/list/field[@name='value']" position="after">
+                    <field name="color" widget="color_picker"/>
+
+                </xpath>
+            </field>
+        </record>
+
+        <record id="survey_question_answer_form" model="ir.ui.view">
+            <field name="name">survey.question.answer.form</field>
+            <field name="model">survey.question.answer</field>
+            <field name="inherit_id" ref="survey.survey_question_answer_view_form" />
+            <field name="arch" type="xml">
+                <field name="sequence" position="after">
+                    <field name="color" widget="color_picker"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

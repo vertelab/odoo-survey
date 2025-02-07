@@ -15,16 +15,16 @@
         </field>
     </record>
 
-    <record id="survey_survey_view_tree" model="ir.ui.view">
-        <field name="name">survey.template</field>
-        <field name="model">survey.survey</field>
-        <field name="inherit_id" ref="survey.survey_survey_view_tree" />
-        <field name="arch" type="xml">
-            <field name="title" position="replace">
-                <field name="display_name" />
-            </field>
-        </field>
-    </record>
+<!--    <record id="survey_survey_view_tree" model="ir.ui.view">-->
+<!--        <field name="name">survey.template</field>-->
+<!--        <field name="model">survey.survey</field>-->
+<!--        <field name="inherit_id" ref="survey.survey_survey_view_tree" />-->
+<!--        <field name="arch" type="xml">-->
+<!--            <field name="title" position="replace">-->
+<!--                <field name="display_name" />-->
+<!--            </field>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <record id="survey_survey_view_kanban" model="ir.ui.view">
         <field name="name">survey.template</field>
