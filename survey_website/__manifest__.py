@@ -47,6 +47,7 @@
     'assets': {
         'survey.survey_assets': [
             ('after', 'survey/static/src/scss/survey_templates_form.scss', 'survey_website/static/src/scss/survey_templates_form.scss'),
+            # ('after', 'survey/static/src/js/survey_form.js', 'survey_website/static/src/js/survey_form.js'),
         ],
 
     },

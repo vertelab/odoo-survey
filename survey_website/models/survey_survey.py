@@ -2,36 +2,25 @@ from random import randint
 from odoo import models, fields, api
 
 COLOR_MAPPING = {
-    1: "red",
-    2: "orange",
-    3: "yellow",
-    4: "lightblue",
-    5: "darkpurple",
-    6: "salmon",
-    7: "mediumblue",
-    8: "darkblue",
-    9: "fuchsia",
-    10: "green",
-    11: "purple",
+    1: "#F06050",
+    2: "#F4A460",
+    3: "#F7CD1F",
+    4: "#6CC1ED",
+    5: "#814968",
+    6: "#EB7E7F",
+    7: "#2C8397",
+    8: "#475577",
+    9: "#D6145F",
+    10: "#30C381",
+    11: "#9365B8",
 }
 
 
 class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
 
-    # _inherit = ['survey.survey', 'portal.mixin', 'mail.thread', 'mail.activity.mixin', 'utm.mixin']
-
     def get_color(self):
         return COLOR_MAPPING.get(self.color, "black")
-
-    def action_preview_custom_survey(self):
-        self.ensure_one()
-        return {
-            'type': 'ir.actions.act_url',
-            'name': "Custom Test Survey",
-            'target': 'new',
-            'url': '/custom_survey/test/%s' % self.access_token,
-        }
 
 
 class SurveyQuestion(models.Model):
