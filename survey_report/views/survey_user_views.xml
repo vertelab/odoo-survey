@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+         <record id="survey_response_line_view_pivot" model="ir.ui.view">
+            <field name="name">survey.user_input.line.view.pivot</field>
+            <field name="model">survey.user_input.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Survey Answer Line" sample="1">
+                    <field name="value_numerical_box" type="measure"/>
+                    <field name="value_numerical_box_average" type="measure"/>
+                    <field name="answer_score" type="measure"/>
+                    <field name="answer_score_average" type="measure"/>
+                    <field name="survey_id" type="col"/>
+                    <field name="question_text" type="row"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="survey_response_line_view_search" model="ir.ui.view">
+            <field name="name">survey.user_input.line.view.search</field>
+            <field name="model">survey.user_input.line</field>
+            <field name="inherit_id" ref="survey.survey_user_input_line_view_search"/>
+            <field name="arch" type="xml">
+                <filter name="group_by_survey" position="after">
+                     <filter name="group_by_question" string="Question" domain="[]" context="{'group_by':'question_text'}"/>
+                </filter>
+            </field>
+        </record>
+
+        <record id="survey.survey_user_input_line_action" model="ir.actions.act_window">
+            <field name="name">Detailed Answers</field>
+            <field name="res_model">survey.user_input.line</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="search_view_id" ref="survey.survey_user_input_line_view_search"/>
+            <field name="context">{'search_default_group_by_survey': True, 'search_default_group_by_user_input': True}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_empty_folder">
+                No user input lines found
+              </p>
+            </field>
+        </record>
+    </data>
+</odoo>
