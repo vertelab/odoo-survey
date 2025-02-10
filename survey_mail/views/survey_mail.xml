@@ -26,11 +26,11 @@
                     <notebook groups="base.group_no_one">
                         <page string="Registration Mails" name="registration_mails">
                             <field name="mail_registration_ids">
-                                <list string="Registration mail" editable="bottom">
+                                <tree string="Registration mail" editable="bottom">
                                     <field name="registration_id" />
                                     <field name="scheduled_date" />
                                     <field name="mail_sent" string="Sent" />
-                                </list>
+                                </tree>
                             </field>
                         </page>
                     </notebook>
@@ -43,14 +43,14 @@
         <field name="name">survey.mail.tree</field>
         <field name="model">survey.mail</field>
         <field name="arch" type="xml">
-            <list string="Survey Mail Schedulers">
+            <tree string="Survey Mail Schedulers">
                 <field name="survey_id" />
                 <field name="notification_type" />
                 <field name="template_ref" options="{'hide_model': True, 'no_quick_create': True}" context="{'filter_template_on_event': True, 'default_model': 'survey.registration'}" />
                 <field name="scheduled_date" />
                 <field name="mail_count_done" />
                 <field name="mail_state" widget="survey_icon_selection" string=" " nolabel="1" options="{'sent': 'fa fa-check', 'scheduled': 'fa fa-hourglass-half', 'running': 'fa fa-cogs'}" />
-            </list>
+            </tree>
         </field>
     </record>
 

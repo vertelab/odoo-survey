@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xmlversion="1.0" encoding="utf-8"?>
 <odoo>
     <data>
         <record id="survey_survey_view_form" model="ir.ui.view">
@@ -12,7 +12,6 @@
             </field>
         </record>
 
-
         <record id="survey_question_form" model="ir.ui.view">
             <field name="name">survey.question.form</field>
             <field name="model">survey.question</field>
@@ -24,7 +23,7 @@
                 <field name="question_type" position="before">
                     <field name="color" widget="color_picker"/>
                 </field>
-                <xpath expr="//page[@name='answers']/field[@name='suggested_answer_ids']/list/field[@name='value']" position="after">
+                <xpath expr="//page[@name='answers']//field[@name='suggested_answer_ids']/list/field[@name='value']" position="after">
                     <field name="color" widget="color_picker"/>
                 </xpath>
             </field>
@@ -40,6 +39,5 @@
                 </field>
             </field>
         </record>
-
     </data>
 </odoo>

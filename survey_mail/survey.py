@@ -42,14 +42,12 @@ _INTERVALS = {
     'now': lambda interval: relativedelta(hours=0),
 }
 
-
 class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
 
-    date_begin = fields.Date(
-        string='Date Begin')  # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
-    date_end = fields.Date(
-        string='Date End')  # fields.date.add|context_today|end_of|start_of|substract|to_date|to_string|today
+
+    date_begin = fields.Date(string='Date Begin') 
+    date_end   = fields.Date(string='Date End')
 
 
 class SurveyMail(models.Model):
@@ -63,7 +61,7 @@ class SurveyMail(models.Model):
         return [('mail.template', 'Mail')]
 
     survey_id = fields.Many2one(comodel_name='survey.survey', string='Survey',
-                                ondelete='cascade', required=True)
+        ondelete='cascade', required=True)
     notification_type = fields.Selection([('mail', 'Mail')], string='Send', default='mail', required=True)
     interval_nbr = fields.Integer('Interval', default=1)
     interval_unit = fields.Selection([
@@ -96,7 +94,6 @@ class SurveyMail(models.Model):
             self.interval_type,
             '%s,%i' % (self.template_ref._name, self.template_ref.id)
         )
-
 
 class SurveyMailScheduler(models.Model):
     """ survey automated mailing. This model replaces all existing fields and
@@ -319,7 +316,8 @@ You receive this email because you are:
         return True
 
 
-class SurveyMailRegistration(models.Model):
+-classSurveyMailRegistration(models.Model):
++classsurveyMailRegistration(models.Model):
     _name = 'survey.mail.registration'
     _description = 'Registration Mail Scheduler'
     _rec_name = 'scheduler_id'
@@ -333,11 +331,11 @@ class SurveyMailRegistration(models.Model):
     def execute(self):
         now = fields.Datetime.now()
         todo = self.filtered(lambda reg_mail:
-                             not reg_mail.mail_sent and \
-                             reg_mail.registration_id.state in ['open', 'done'] and \
-                             (reg_mail.scheduled_date and reg_mail.scheduled_date <= now) and \
-                             reg_mail.scheduler_id.notification_type == 'mail'
-                             )
+            not reg_mail.mail_sent and \
+            reg_mail.registration_id.state in ['open', 'done'] and \
+            (reg_mail.scheduled_date and reg_mail.scheduled_date <= now) and \
+            reg_mail.scheduler_id.notification_type == 'mail'
+        )
         done = self.browse()
         for reg_mail in todo:
             organizer = reg_mail.scheduler_id.survey_id.organizer_id

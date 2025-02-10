@@ -67,7 +67,4 @@ odoo.define('survey_website.form', function (require) {
     })
 })
 
-// # else 
-/** @odoo-module **/
-
-import SurveyFormWidget  from "@survey/js/survey_form";
+// #endif

@@ -18,8 +18,8 @@ class MailComposeMessage(models.TransientModel):
 
         # use only for allowed models in mass mailing
         if (self.composition_mode != 'mass_mail' or
-                not self.mass_mailing_id or
-                not self.model_is_thread):
+            not self.mass_mailing_id or
+            not self.model_is_thread):
             return mail_values_all
 
         trace_values_all = self._prepare_mail_values_mailing_traces(mail_values_all)

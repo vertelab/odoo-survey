@@ -1,10 +1,3 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
      <template id="email_designer_snippets" inherit_id="mass_mailing.email_designer_snippets">
-         <xpath expr="//t[@id='default_snippets']/snippets[@id='email_designer_header_elements']" position="after">
-             <snippets id="email_designer_custom_snippet" string="Custom Snippet">
-                  <t t-snippet="survey_mail.s_survey_invitation_button" string="Survey Invitation Button" t-thumbnail="/mass_mailing/static/src/img/snippets_thumbs/s_text_block.svg"/>
-             </snippets>
-         </xpath>
-     </template>
-</odoo>
