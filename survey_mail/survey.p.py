@@ -45,9 +45,8 @@ _INTERVALS = {
 class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
 
-
-    date_begin = fields.Date(string='Date Begin') 
-    date_end   = fields.Date(string='Date End')
+    date_begin = fields.Date(string='Date Begin')
+    date_end   = fields.Date(string='Date End') 
 
 
 class SurveyMail(models.Model):
@@ -316,8 +315,7 @@ You receive this email because you are:
         return True
 
 
--classSurveyMailRegistration(models.Model):
-+classsurveyMailRegistration(models.Model):
+class SurveyMailRegistration(models.Model):
     _name = 'survey.mail.registration'
     _description = 'Registration Mail Scheduler'
     _rec_name = 'scheduler_id'

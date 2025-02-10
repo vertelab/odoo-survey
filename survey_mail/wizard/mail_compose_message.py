@@ -56,3 +56,4 @@ class MailComposeMessage(models.TransientModel):
                 'mailing_trace_ids': [(0, 0, trace_values_all[res_id])] if res_id in trace_values_all else False,
             })
         return mail_values_all
+        return mail_values_all

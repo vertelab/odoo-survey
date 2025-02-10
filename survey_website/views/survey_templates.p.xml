@@ -27,7 +27,11 @@
     </template>
 
     <template id="question_multiple_choice" inherit_id="survey.question_multiple_choice">
+        <!-- # if VERSION <= "16.0"-->
+        <xpath expr="//div[@t-att-data-name='question.id']/div[1]/t[@t-foreach='question.suggested_answer_ids']/label[1]/span[@t-field='label.value']" position="replace">
+        <!-- # elif VERSION >= "17.0"-->
         <xpath expr="//div[@t-att-data-name='question.id']/t[@t-foreach='question.suggested_answer_ids']//label[1]/span[@t-field='label.value']" position="replace">
+        <!-- # endif -->
             <span class="ms-2 text-break" t-field='label.value' t-att-style="'color: ' + label.get_color()"/>
         </xpath>
     </template>

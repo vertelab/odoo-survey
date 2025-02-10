@@ -41,6 +41,9 @@
     'assets': {
         'survey.survey_assets': [
             ('after', 'survey/static/src/scss/survey_templates_form.scss', 'survey_website/static/src/scss/survey_templates_form.scss'),
+            ## if VERSION <= "16.0"
+            ('after', 'survey/static/src/js/survey_form.js', 'survey_website/static/src/js/survey_form.js'),
+            ## endif
         ],
     },
     "installable": True,

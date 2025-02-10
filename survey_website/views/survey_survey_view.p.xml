@@ -23,7 +23,11 @@
                 <field name="question_type" position="before">
                     <field name="color" widget="color_picker"/>
                 </field>
+                <!-- # if VERSION <= "17.0"-->
+                <xpath expr="//page[@name='answers']//field[@name='suggested_answer_ids']/tree/field[@name='value']" position="after">
+                <!-- # elif VERSION >= "18.0"-->
                 <xpath expr="//page[@name='answers']//field[@name='suggested_answer_ids']/list/field[@name='value']" position="after">
+                <!-- # endif -->
                     <field name="color" widget="color_picker"/>
                 </xpath>
             </field>
