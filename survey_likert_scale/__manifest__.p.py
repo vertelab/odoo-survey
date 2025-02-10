@@ -1,0 +1,56 @@
+diff--git a/survey_likert_scale/__manifest__.py b/survey_likert_scale/__manifest__.py
+index867a09c..33a9268 100644
+---a/survey_likert_scale/__manifest__.py
++++b/survey_likert_scale/__manifest__.py
+@@-1,49 +1,49 @@
+# -*- coding: utf-8 -*-
+##############################################################################
+#
+#    Odoo SA, Open Source Management Solution, third party addon
+#    Copyright (C) 2024- Vertel AB (<https://vertel.se>).
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+{
+    "name": "Survey: Likert Scale",
+    "version": "1.0",
+    'summary': 'Adds Likert Scale',
+    'description': """
+    
+    Template for Likert Scale.
+    
+    """,
+    'category': 'Sales',
+    'license': 'AGPL-3',
+    'author': 'Vertel AB',
+    'maintainer': 'Vertel AB',
+    'contributor': '',
+    'website': "https://vertel.se/apps/odoo-survey/survey_likert_scale",
+    'images': ['/static/description/banner.png'], # 560x280 px.
+    'repository': 'https://github.com/vertelab/odoo-survey',
+    # Any module necessary for this one to work correctly
+
+-   "depends": ['survey', 'survey_template'],
++   "depends": ['survey'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/likert_scale_view.xml',
+        'views/survey_question_view.xml',
+        'data/data.xml',
+-   ],
++  ],
+    "installable": True,
+    "auto_install": False,
+}
