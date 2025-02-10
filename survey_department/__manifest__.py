@@ -43,7 +43,6 @@
     'depends': ['survey', 'hr',],
     'data': [
         'views/survey_views.xml',
-        # 'security/survey_security.xml'
     ],
     'installable': True,
     'auto_install': True,
