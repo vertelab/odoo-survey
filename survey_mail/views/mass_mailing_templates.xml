@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="email_designer_snippets" inherit_id="mass_mailing.email_designer_snippets">
+    </template>
+</odoo>
