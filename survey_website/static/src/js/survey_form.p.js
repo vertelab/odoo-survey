@@ -1,4 +1,4 @@
-// # if VERSION == "16.0"
+// #if VERSION == "16.0"
 odoo.define('survey_website.form', function (require) {
     'use strict';
 
