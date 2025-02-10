@@ -7,7 +7,11 @@
             <field name="arch" type="xml">
                <field name="question_type" position="before">
                    <field name="is_likert_scale"/>
+                   <!-- # if VERSION <= "16.0"-->
+                   <field name="likert_scale_template_id" attrs="{'invisible': [('is_likert_scale', '=', False)], 'required': [('is_likert_scale', '=', True)]}"/>
+                   <!-- # elif VERSION >= "17.0"-->
                    <field name="likert_scale_template_id" invisible="is_likert_scale == False" required="is_likert_scale == True"/>
+                   <!-- # endif -->
                </field>
             </field>
          </record>
