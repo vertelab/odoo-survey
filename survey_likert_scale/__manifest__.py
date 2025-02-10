@@ -1,8 +1,3 @@
-diff--git a/survey_likert_scale/__manifest__.py b/survey_likert_scale/__manifest__.py
-index867a09c..33a9268 100644
----a/survey_likert_scale/__manifest__.py
-+++b/survey_likert_scale/__manifest__.py
-@@-1,49 +1,49 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
