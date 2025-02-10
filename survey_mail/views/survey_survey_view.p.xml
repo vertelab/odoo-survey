@@ -26,7 +26,11 @@
             <xpath expr="//page[last()]" position="after">
                 <page string="Communication" name="event_communication">
                     <field name="survey_mail_ids">
+                        <!-- # if VERSION == 18.0 -->
+                        <list string="Communication" editable="bottom">
+                        <!-- # else -->
                         <tree string="Communication" editable="bottom">
+                        <!-- # endif -->
                             <field name="sequence" widget="handle"/>
                             <field name="notification_type"/>
                             <field name="template_model_id" column_invisible="True"/>
@@ -37,7 +41,11 @@
                             <field name="scheduled_date" groups="base.group_no_one"/>
                             <field name="mail_count_done"/>
                             <field name="mail_state" widget="event_icon_selection" string=" " nolabel="1" options="{'sent': 'fa fa-check', 'scheduled': 'fa fa-hourglass-half', 'running': 'fa fa-cogs'}"/>
+                        <!-- # if VERSION == 18.0 -->
+                        </list>
+                        <!-- # else -->
                         </tree>
+                        <!-- # endif -->
                     </field>
                 </page>
             </xpath>
