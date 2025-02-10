@@ -10,7 +10,7 @@
         <xpath expr="//t[2]/h2[@t-field='page.title']" position="replace">
             <h2 t-field="page.title" class="o_survey_title pb16 text-break" t-att-style="'color: ' + page.get_color()"/>
         </xpath>
-
+ 
         <xpath expr="//t[1]/t[@t-foreach='survey.question_and_page_ids']/h2[@t-field='question.title']" position="replace">
             <h2 t-if="question.is_page" t-field='question.title' class="o_survey_title pb16 text-break" t-att-style="'color: ' + question.get_color()"/>
         </xpath>
@@ -32,7 +32,6 @@
         </xpath>
     </template>
 
-
     <template id="survey.question_suggested_value_image">
         <t t-if="label.value_image">
             <!-- Directly use field or route if the user doesn't have access rights -->
@@ -45,7 +44,4 @@
                 t-options="{'widget': 'image', 'alt-field': 'name', 'itemprop': 'image'}"/>
         </t>
     </template>
-
 </odoo>
-
-

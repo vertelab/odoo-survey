@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xmlversion="1.0" encoding="utf-8"?>
 <odoo>
     <data>
         <record id="survey_survey_view_form" model="ir.ui.view">
@@ -11,7 +11,6 @@
                 </field>
             </field>
         </record>
-
 
         <record id="survey_question_form" model="ir.ui.view">
             <field name="name">survey.question.form</field>
@@ -40,6 +39,5 @@
                 </field>
             </field>
         </record>
-
     </data>
 </odoo>

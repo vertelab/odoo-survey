@@ -64,6 +64,5 @@ odoo.define('survey_website.form', function (require) {
             }
         },
     })
-
-
 })
+

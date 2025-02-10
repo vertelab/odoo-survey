@@ -1,8 +1,7 @@
 from random import randint
 from odoo import models, fields, api
 
-
-COLOR_MAPPING = {
+COLOR_MAPPING= {
     1: "#F06050",
     2: "#F4A460",
     3: "#F7CD1F",
@@ -16,27 +15,28 @@ COLOR_MAPPING = {
     11: "#9365B8",
 }
 
-
 class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
-
+ 
     def get_color(self):
         return COLOR_MAPPING.get(self.color, "black")
 
 
 class SurveyQuestion(models.Model):
     _inherit = 'survey.question'
-
+    
     def get_color(self):
         return COLOR_MAPPING.get(self.color, "black")
 
+    
     color = fields.Integer(default=lambda dummy: randint(1, 11))
 
 
 class SurveyQuestionAnswer(models.Model):
     _inherit = 'survey.question.answer'
-
+ 
     def get_color(self):
         return COLOR_MAPPING.get(self.color, "black")
+ 
 
     color = fields.Integer(default=lambda dummy: randint(1, 11))
