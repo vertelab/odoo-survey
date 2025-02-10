@@ -1,3 +1,8 @@
+diff--git a/survey_likert_scale/__manifest__.py b/survey_likert_scale/__manifest__.py
+index867a09c..33a9268 100644
+---a/survey_likert_scale/__manifest__.py
++++b/survey_likert_scale/__manifest__.py
+@@-1,49 +1,49 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -37,13 +42,15 @@
     'repository': 'https://github.com/vertelab/odoo-survey',
     # Any module necessary for this one to work correctly
 
-    "depends": ['survey', 'survey_template'],
+-   "depends": ['survey', 'survey_template'],
++   "depends": ['survey'],
     'data': [
         'security/ir.model.access.csv',
         'views/likert_scale_view.xml',
         'views/survey_question_view.xml',
         'data/data.xml',
-    ],
+-   ],
++  ],
     "installable": True,
     "auto_install": False,
 }
