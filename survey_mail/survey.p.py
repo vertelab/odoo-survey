@@ -32,7 +32,7 @@ from odoo.tools import exception_to_unicode
 from odoo.tools.translate import _
 from odoo.exceptions import MissingError, ValidationError
 
-+_logger = logging.getLogger(__name__)
+_logger = logging.getLogger(__name__)
 
 _INTERVALS = {
     'hours': lambda interval: relativedelta(hours=interval),
