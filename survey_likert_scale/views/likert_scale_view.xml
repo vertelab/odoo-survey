@@ -12,11 +12,11 @@
                     <notebook groups="base.group_no_one">
                         <page string="Options" name="likert_scale_options">
                             <field name="option_ids">
-                                <tree string="Options" editable="bottom">
+                                <list string="Options" editable="bottom">
                                     <field name="sequence" widget="handle"/>
                                     <field name="option" />
                                     <field name="score" />
-                                </tree>
+                                </list>
                             </field>
                         </page>
                     </notebook>
@@ -29,9 +29,9 @@
         <field name="name">likert.scale.template.tree</field>
         <field name="model">likert.scale.template</field>
         <field name="arch" type="xml">
-            <tree string="Likert Scale Template" editable="bottom">
+            <list string="Likert Scale Template">
                 <field name="name" />
-            </tree>
+            </list>
         </field>
     </record>
 
