@@ -14,18 +14,46 @@ class SurveyInput(models.Model):
     _inherit = "survey.user_input.line"
  
     question_text = fields.Char(string="Question Text", related="question_id.title", store=True)
+    ## if VERSION <= "17.0"
+    answer_score_average = fields.Float(string="Average Score", related="answer_score", store=True,
+                                        group_operator="avg")
+    ## else
     answer_score_average = fields.Float(string="Average Score", related="answer_score", store=True,
                                         aggregator="avg")
+    ##endif
 
+    ## if VERSION <= "17.0"
+    value_numerical_box_average = fields.Float(
+        string="Average Numerical answer", related="value_numerical_box", store=True, group_operator="avg")
+    ## else
     value_numerical_box_average = fields.Float(
         string="Average Numerical answer", related="value_numerical_box", store=True, aggregator="avg")
+    ##endif
 
+    ## if VERSION <= "17.0"
+    answer_score_min = fields.Float(string="Minimum Score", related="answer_score", store=True, group_operator="min")
+    ## else
     answer_score_min = fields.Float(string="Minimum Score", related="answer_score", store=True, aggregator="min")
+    ##endif
 
+    ## if VERSION <= "17.0"
+    value_numerical_box_min = fields.Float(
+        string="Minimum Numerical answer", related="value_numerical_box", store=True, group_operator="min")
+    ## else
     value_numerical_box_min = fields.Float(
         string="Minimum Numerical answer", related="value_numerical_box", store=True, aggregator="min")
+    ##endif
 
+    ## if VERSION <= "17.0"
+    answer_score_max = fields.Float(string="Maximum Score", related="answer_score", store=True, group_operator="max")
+    ## else
     answer_score_max = fields.Float(string="Maximum Score", related="answer_score", store=True, aggregator="max")
+    ##endif
 
+    ## if VERSION <= "17.0"
+    value_numerical_box_max = fields.Float(
+        string="Maximum Numerical answer", related="value_numerical_box", store=True, group_operator="max")
+    ## else
     value_numerical_box_max = fields.Float(
         string="Maximum Numerical answer", related="value_numerical_box", store=True, aggregator="max")
+    ##endif
