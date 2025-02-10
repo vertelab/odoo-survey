@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="survey_participant_invite_view_form">
+            <field name="name">survey.participant.invite.view.form</field>
+            <field name="model">survey.participant.invite</field>
+            <field name="arch" type="xml">
+                <form string="Invite Participants" class="o_mail_composer_form">
+                    <group col="1">
+                        <group col="2">
+                            <field name="author_id" invisible="1"/>
+                            <field name="survey_access_mode" invisible="1"/>
+                            <field name="survey_users_login_required" invisible="1"/>
+                            <field name="survey_users_can_signup" invisible="1"/>
+                            <field name="survey_id" invisible="1"/>
+
+                            <!-- # if VERSION <= "16.0"-->
+                            <label class="o_survey_label_survey_start_url" for="survey_start_url" string="Survey Link"
+                                 attrs="{'invisible': [('survey_access_mode', '!=', 'public')]}"/>
+                            <!-- # elif VERSION >= "17.0"-->
+                            <label class="o_survey_label_survey_start_url" for="survey_start_url" string="Survey Link"
+                                 invisible="survey_access_mode != 'public'"/>
+                            <!-- # endif -->
+
+                            <!-- # if VERSION <= "16.0"-->
+                            <field name="survey_start_url" nolabel="1" widget="CopyClipboardChar"
+                                 readonly="1"
+                                 attrs="{'invisible': [('survey_access_mode', '!=', 'public')]}"/>
+                            <!-- # elif VERSION >= "17.0"-->
+                            <field name="survey_start_url" nolabel="1" widget="CopyClipboardChar"
+                                 readonly="1"
+                                 invisible="survey_access_mode != 'public'"/>
+                            <!-- # endif -->
+
+                            <field name="mailing_model_id"/>
+                            <field name="mailing_on_mailing_list" invisible="1"/>
+                            
+                            <!-- # if VERSION <= "16.0"-->
+                            <field name="contact_list_ids" widget="many2many_tags" context="{'form_view_ref': 'mass_mailing.mailing_list_view_form_simplified'}" attrs="{'invisible': [('mailing_on_mailing_list', '=', False)]}"/>
+                            <!-- # elif VERSION >= "17.0"-->
+                            <field name="contact_list_ids" widget="many2many_tags" context="{'form_view_ref': 'mass_mailing.mailing_list_view_form_simplified'}" invisible="not mailing_on_mailing_list"/>
+                            <!-- # endif -->
+
+
+
+                            <!-- # if VERSION <= "16.0"-->
+                            <field name="partner_ids"
+                                widget="many2many_tags_email"
+                                placeholder="Add existing contacts..." options="{'no_quick_create': True}"
+                                context="{'show_email': True, 'form_view_ref': 'base.view_partner_simple_form'}" attrs="{'invisible': [('mailing_on_mailing_list', '=', True)]}"
+                               />
+                            <!-- # elif VERSION >= "17.0"-->
+                            <field name="partner_ids"
+                                widget="many2many_tags_email"
+                                placeholder="Add existing contacts..." options="{'no_quick_create': True}"
+                                context="{'show_email': True, 'form_view_ref': 'base.view_partner_simple_form'}" invisible="mailing_on_mailing_list"
+                               />
+                            <!-- # endif -->
+
+                            <!-- # if VERSION <= "16.0"-->
+                            <field name="emails"
+                                attrs="{'invisible': [('survey_users_login_required', '=', True)]}"
+                                placeholder="e.g.  'Rick Sanchez' &lt;rick_sanchez@example.com&gt;, hictor_vugo@example.com"/>
+                            <!-- # elif VERSION >= "17.0"-->
+                            <field name="emails"
+                                invisible="survey_users_login_required"
+                                placeholder="e.g.  'Rick Sanchez' &lt;rick_sanchez@example.com&gt;, hictor_vugo@example.com"/>
+                            <!-- # endif -->
+                        </group>
+                        <field name="existing_partner_ids" invisible="1"/>
+                        <field name="existing_emails" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button string="Continue with Invitation" name="action_invite_participant" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button string="Close" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
