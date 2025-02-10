@@ -12,18 +12,18 @@
                     <notebook groups="base.group_no_one">
                         <page string="Options" name="likert_scale_options">
                             <field name="option_ids">
-                                <!-- # if VERSION == 18.0 -->
-                                <list string="Options" editable="bottom">
-                                <!-- # else -->
+                                <!-- # if VERSION <= "17.0"-->
                                 <tree string="Options" editable="bottom">
+                                <!-- # elif VERSION >= "18.0"-->
+                                <list string="Options" editable="bottom">
                                 <!-- # endif -->
                                     <field name="sequence" widget="handle"/>
                                     <field name="option" />
                                     <field name="score" />
-                                <!-- # if VERSION == 18.0 -->
-                                </list>
-                                <!-- # else -->
+                                <!-- # if VERSION <= "17.0"-->
                                 </tree>
+                                <!-- # elif VERSION >= "18.0"-->
+                                </list>
                                 <!-- # endif -->
                             </field>
                         </page>
@@ -37,16 +37,16 @@
         <field name="name">likert.scale.template.tree</field>
         <field name="model">likert.scale.template</field>
         <field name="arch" type="xml">
-            <!-- # if VERSION == 18.0 -->
-            <list string="Likert Scale Template">
-            <!-- # else -->
+            <!-- # if VERSION <= "17.0"-->
             <tree string="Likert Scale Template">
+            <!-- # elif VERSION >= "18.0"-->
+            <list string="Likert Scale Template">
             <!-- # endif -->
                 <field name="name" />
-            <!-- # if VERSION == 18.0 -->
-            </list>
-            <!-- # else -->
+            <!-- # if VERSION <= "17.0"-->
             </tree>
+            <!-- # elif VERSION >= "18.0"-->
+            </list>
             <!-- # endif -->
         </field>
     </record>
@@ -54,11 +54,7 @@
     <record model="ir.actions.act_window" id="action_likert_scale">
         <field name="name">Likert Scale Template</field>
         <field name="res_model">likert.scale.template</field>
-        <!-- # if VERSION == 18.0 -->
-        <field name="view_mode">list,form</field>
-        <!-- # else -->
         <field name="view_mode">tree,form</field>
-        <!-- # endif -->
         <field name="view_id" ref="view_likert_scale_tree"/>
     </record>
 
