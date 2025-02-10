@@ -1,0 +1,51 @@
+<odoo>
+    <template id="survey_fill_header" inherit_id="survey.survey_fill_header">
+        <xpath expr="//div[1]/div[1]/div[1]/div[1]/h1[1]" position="replace">
+            <h1 t-if="answer.state == 'new' or survey.questions_layout != 'page_per_question'"
+                            t-field="survey.title" class="o_survey_main_title pt-4"></h1>
+        </xpath>
+    </template>
+
+    <template id="survey_fill_form_in_progress" inherit_id="survey.survey_fill_form_in_progress">
+        <xpath expr="//t[2]/h2[@t-field='page.title']" position="replace">
+            <h2 t-field="page.title" class="o_survey_title pb16 text-break" t-att-style="'color: ' + page.get_color()"/>
+        </xpath>
+ 
+        <xpath expr="//t[1]/t[@t-foreach='survey.question_and_page_ids']/h2[@t-field='question.title']" position="replace">
+            <h2 t-if="question.is_page" t-field='question.title' class="o_survey_title pb16 text-break" t-att-style="'color: ' + question.get_color()"/>
+        </xpath>
+    </template>
+
+    <!-- Question widgets -->
+    <template id="question_container" inherit_id="survey.question_container">
+        <xpath expr="//div[@t-att-id='question.id']/div[hasclass('mb-4')]/h3[@t-if='not hide_question_title']" position="replace">
+            <h3 t-if="not hide_question_title">
+                <span t-field='question.title' class="text-break" t-att-style="'color: ' + question.get_color()"/>
+                <span t-if="question.constr_mandatory" class="text-danger">*</span>
+            </h3>
+        </xpath>
+    </template>
+
+    <template id="question_multiple_choice" inherit_id="survey.question_multiple_choice">
+        <!-- # if VERSION <= "16.0"-->
+        <xpath expr="//div[@t-att-data-name='question.id']/div[1]/t[@t-foreach='question.suggested_answer_ids']/label[1]/span[@t-field='label.value']" position="replace">
+        <!-- # elif VERSION >= "17.0"-->
+        <xpath expr="//div[@t-att-data-name='question.id']/t[@t-foreach='question.suggested_answer_ids']//label[1]/span[@t-field='label.value']" position="replace">
+        <!-- # endif -->
+            <span class="ms-2 text-break" t-field='label.value' t-att-style="'color: ' + label.get_color()"/>
+        </xpath>
+    </template>
+
+    <template id="survey.question_suggested_value_image">
+        <t t-if="label.value_image">
+            <!-- Directly use field or route if the user doesn't have access rights -->
+            <div t-if="not env.user.has_group('survey.group_survey_user')"
+                class="o_survey_choice_img d-flex my-3 justify-content-center">
+                <img t-att-src="'/survey/get_question_image/%s/%s/%s/%s' % (survey.access_token, answer.access_token, question.id, label.id)" t-att-alt="label.value"/>
+            </div>
+            <div t-else=""  t-field="label.value_image"
+                class="o_survey_choice_img d-flex my-3 justify-content-center"
+                t-options="{'widget': 'image', 'alt-field': 'name', 'itemprop': 'image'}"/>
+        </t>
+    </template>
+</odoo>
