@@ -1,8 +1,3 @@
-diff--git a/survey_template/__manifest__.py b/survey_template/__manifest__.py
-indexb343573..2b7c502 100644
----a/survey_template/__manifest__.py
-+++b/survey_template/__manifest__.py
-@@-1,49 +1,49 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
