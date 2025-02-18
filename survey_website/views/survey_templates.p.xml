@@ -1,19 +1,26 @@
 <odoo>
     <template id="survey_fill_header" inherit_id="survey.survey_fill_header">
         <xpath expr="//div[1]/div[1]/div[1]/div[1]/h1[1]" position="replace">
-            <h1 t-if="answer.state == 'new' or survey.questions_layout != 'page_per_question'"
-                            t-field="survey.title" class="o_survey_main_title pt-4"></h1>
+            <h1 t-if="answer.state == 'new' or survey.questions_layout != 'page_per_question'" t-field="survey.title" class="o_survey_main_title pt-4"></h1>
         </xpath>
     </template>
 
     <template id="survey_fill_form_in_progress" inherit_id="survey.survey_fill_form_in_progress">
+       
         <xpath expr="//t[2]/h2[@t-field='page.title']" position="replace">
             <h2 t-field="page.title" class="o_survey_title pb16 text-break" t-att-style="'color: ' + page.get_color()"/>
         </xpath>
  
+        <!-- #if VERSION >= "18.0" -->
+        <xpath expr="//t[1]/t[@t-foreach='survey.page_ids']/div/h2[@t-field='page.title']" position="replace">
+            <h2 t-field='page.title' class="o_survey_title pb16 text-break" t-att-style="'color: ' + page.get_color()"/>
+        </xpath>
+        <!-- #elif VERSION <= "17.0" -->
         <xpath expr="//t[1]/t[@t-foreach='survey.question_and_page_ids']/h2[@t-field='question.title']" position="replace">
             <h2 t-if="question.is_page" t-field='question.title' class="o_survey_title pb16 text-break" t-att-style="'color: ' + question.get_color()"/>
         </xpath>
+        <!-- #endif -->
+
     </template>
 
     <!-- Question widgets -->
