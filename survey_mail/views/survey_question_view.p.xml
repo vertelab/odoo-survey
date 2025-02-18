@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="survey_question_form" model="ir.ui.view">
+            <field name="name">Form view for survey question.inherited.survey_save</field>
+            <field name="model">survey.question</field>
+            <field name="inherit_id" ref="survey.survey_question_form" />
+            <field name="arch" type="xml">
+                <page name="options" position="inside">
+                    <group string="Meta Data">
+                        <field name="fields_name" />
+                    </group>
+                </page>
+                <field name="quizz_mark" position="before">
+                    <field name="technical_value" />
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
