@@ -21,7 +21,7 @@
 
 {
     'name': 'Survey: Template',
-    version': '1.0',
+    'version': '1.0',
     'summary': 'Adds better template handling ',
     'description': """
 
