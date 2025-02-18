@@ -34,11 +34,6 @@
             <xpath expr="//field[@name='title']" position="replace">
                 <field name="display_name" />
             </xpath>
-            <xpath expr="//h4[@class='o_kanban_record_title p-0 mb4']" position="replace">
-                <h4 class="o_kanban_record_title p-0 mb4">
-                    <field name="display_name" />
-                </h4>
-            </xpath>
         </field>
     </record>
 
