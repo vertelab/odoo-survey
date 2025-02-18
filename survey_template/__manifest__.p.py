@@ -21,7 +21,13 @@
 
 {
     'name': 'Survey: Template',
+    # #if VERSION == "18.0"
+    'version': '18.0.1.0.0',
+    # #elif VERSION == "17.0" 
+    'version': '17.0.1.0.0',
+    # #else
     version': '1.0',
+    # #endif
     'summary': 'Adds better template handling ',
     'description': """
 
