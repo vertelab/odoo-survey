@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="1">
+        <record id="common_template" model="likert.scale.template">
+            <field name="name">Common</field>
+            <field name="option_ids" eval="[
+                Command.clear(),
+                Command.create({'option': 'Strongly Disagree', 'score': 1, 'sequence': 1}),
+                Command.create({'option': 'Disagree', 'score': 2, 'sequence': 2}),
+                Command.create({'option': 'Neutral', 'score': 3, 'sequence': 3}),
+                Command.create({'option': 'Agree', 'score': 4, 'sequence': 4}),
+                Command.create({'option': 'Strongly Agree', 'score': 5, 'sequence': 5})]"/>
+        </record>
+    </data>
+</odoo>
