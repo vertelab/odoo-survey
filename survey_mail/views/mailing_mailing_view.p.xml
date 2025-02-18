@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="mailing_mailing_form_view" model="ir.ui.view">
+            <field name="name">mailing.view.form.mail</field>
+            <field name="model">mailing.mailing</field>
+            <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='mailing_model_id_container']" position="after">
+                    <field name="survey_button"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
