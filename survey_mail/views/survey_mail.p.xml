@@ -26,7 +26,7 @@
                     <notebook groups="base.group_no_one">
                         <page string="Registration Mails" name="registration_mails">
                             <field name="mail_registration_ids">
-                                <!-- # if VERSION == 18.0 -->
+                                <!-- # if VERSION == "18.0" -->
                                 <list string="Registration mail" editable="bottom">
                                 <!-- # else -->
                                 <tree string="Registration mail" editable="bottom">
@@ -34,7 +34,7 @@
                                     <field name="registration_id" />
                                     <field name="scheduled_date" />
                                     <field name="mail_sent" string="Sent" />
-                                <!-- # if VERSION == 18.0 -->
+                                <!-- # if VERSION == "18.0" -->
                                 </list>
                                 <!-- # else -->
                                 </tree>
@@ -51,7 +51,7 @@
         <field name="name">survey.mail.tree</field>
         <field name="model">survey.mail</field>
         <field name="arch" type="xml">
-            <!-- # if VERSION == 18.0 -->
+            <!-- # if VERSION == "18.0" -->
             <list string="Survey Mail Schedulers">
             <!-- # else -->
             <tree string="Survey Mail Schedulers">
@@ -62,7 +62,7 @@
                 <field name="scheduled_date" />
                 <field name="mail_count_done" />
                 <field name="mail_state" widget="survey_icon_selection" string=" " nolabel="1" options="{'sent': 'fa fa-check', 'scheduled': 'fa fa-hourglass-half', 'running': 'fa fa-cogs'}" />
-            <!-- # if VERSION == 18.0 -->
+            <!-- # if VERSION == "18.0" -->
             </list>
             <!-- # else -->
             </tree>
