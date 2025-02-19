@@ -36,7 +36,8 @@
     'repository': 'https://github.com/vertelab/odoo-survey',
     "depends": ['survey',],
     'data': [
-        'views/survey_user_views.xml'
+        'views/survey_user_views.xml',
+        'security/survey_security.xml',
     ],
     "installable": True,
     "auto_install": False,
