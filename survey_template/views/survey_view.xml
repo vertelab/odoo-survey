@@ -5,12 +5,17 @@
         <field name="model">survey.survey</field>
         <field name="inherit_id" ref="survey.survey_survey_view_form" />
         <field name="arch" type="xml">
-            <field name="survey_type" position="after">
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
                 <label for="is_template" string="Är mall"/>
                 <field name="is_template" />
-            </field>
+            </xpath>
+
+<!--            <field name="survey_type" position="after">-->
+<!--                <label for="is_template" string="Är mall"/>-->
+<!--                <field name="is_template" />-->
+<!--            </field>-->
             <button name="action_send_survey" position="after">
-                 <button name="new_from_template" type="object" string="Skapa från mall" invisible="not is_template"/>
+                <button name="new_from_template" type="object" string="Skapa från mall" attrs="{'invisible': [('is_template', '=', False)]}"/>
              </button>
         </field>
     </record>
@@ -42,6 +47,9 @@
         <field name="model">survey.survey</field>
         <field name="inherit_id" ref="survey.survey_survey_view_search" />
         <field name="arch" type="xml">
+            <field name="title" position="after">
+                <field name="is_template"/>
+            </field>
             <filter name="not_certification" position="after">
                 <filter string="Is Template" name="template" domain="[('is_template', '=', True)]" />
                 <filter string="Is Not Template" name="template" domain="[('is_template', '=', False)]" />

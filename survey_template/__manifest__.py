@@ -35,7 +35,7 @@
     'maintainer': 'Vertel AB',
     'contributor': '',
     'website': "https://vertel.se/apps/odoo-survey/survey_template",
-    'images': ['/static/description/banner.png'], # 560x280 px.
+    'images': ['/static/description/banner.png'],  # 560x280 px.
     'repository': 'https://github.com/vertelab/odoo-survey',
     # Any module necessary for this one to work correctly
     

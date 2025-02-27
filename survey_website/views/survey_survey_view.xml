@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="survey.survey_survey_view_form" />
             <field name="arch" type="xml">
                 <field name="description" position="attributes">
-                    <attribute name="options">{'collaborative': true, 'resizable': false}</attribute>
+                    <attribute name="options">{'codeview': true, 'collaborative': true, 'resizable': false}</attribute>
                 </field>
             </field>
         </record>
@@ -17,7 +17,7 @@
             <field name="inherit_id" ref="survey.survey_question_form" />
             <field name="arch" type="xml">
                 <field name="description" position="attributes">
-                    <attribute name="options">{'collaborative': true, 'resizable': false}</attribute>
+                    <attribute name="options">{'codeview': true, 'collaborative': true, 'resizable': false}</attribute>
                 </field>
                 <field name="question_type" position="before">
                     <field name="color" widget="color_picker"/>

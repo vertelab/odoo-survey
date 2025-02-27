@@ -5,13 +5,17 @@
         <field name="model">survey.survey</field>
         <field name="inherit_id" ref="survey.survey_survey_view_form" />
         <field name="arch" type="xml">
+            <!--# if VERSION == '18.0'-->
             <field name="survey_type" position="after">
                 <label for="is_template" string="Är mall"/>
                 <field name="is_template" />
             </field>
-            <button name="action_send_survey" position="after">
-                 <button name="new_from_template" type="object" string="Skapa från mall" invisible="not is_template"/>
-             </button>
+            <!--# else -->
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <label for="is_template" string="Är mall"/>
+                <field name="is_template" />
+            </xpath>
+            <!--# endif -->
         </field>
     </record>
 
