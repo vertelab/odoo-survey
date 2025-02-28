@@ -18,8 +18,9 @@
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{   'name': 'Survey: Website',
-    'version': '18.0.1.0.0',
+{
+    'name': 'Survey: Website',
+    'version': '1.0',
     'summary': 'Adds better template handling ',
     'description': """
      Define templates and join those with surveys

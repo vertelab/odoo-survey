@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="external_loader" name="Survey : external_script field of survey">
+            <script t-attf-src="{{url}}/survey/{{survey_token}}/popup" type="text/javascript" async="async"/>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="survey_survey_view_form" model="ir.ui.view">
+            <field name="name">survey.survey.from</field>
+            <field name="model">survey.survey</field>
+            <field name="inherit_id" ref="survey.survey_survey_view_form" />
+            <field name="arch" type="xml">
+                <page name="description_done" position="after">
+                    <page string="Widget" name="survey_widget">
+
+                        <group>
+                            <group>
+                                <field name="delay"/>
+                                <field name="access_token" invisible="1"/>
+                            </group>
+                        </group>
+
+                        <div class="alert alert-warning mt4 mb16" role="alert" attrs="{&quot;invisible&quot;: [[&quot;access_token&quot;, &quot;!=&quot;, False]]}">
+                            Save your survey to get your widget script.
+                        </div>
+                        <div attrs="{&quot;invisible&quot;: [[&quot;access_token&quot;, &quot;=&quot;, False]]}">
+                            <separator string="use survey on your the website"/>
+                            <p>
+                                Copy and paste this code into your website, within the &lt;head&gt; tag:
+                            </p>
+                            <field name="script_external" readonly="1" widget="CopyClipboardText"/>
+                        </div>
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>
