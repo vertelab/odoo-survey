@@ -24,7 +24,7 @@ class SurveyWebsiteController(Survey):
         if not survey_sudo:
             return request.not_found()
 
-        survey_url = f"http://localhost:8069/survey/start/{survey_token}"
+        survey_url = f"{survey_sudo.get_base_url()}/survey/start/{survey_token}"
 
         js_code = f"""
             (function() {{
