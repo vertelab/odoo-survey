@@ -1,0 +1,605 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 13:48+0000\n"
+"PO-Revision-Date: 2025-09-29 16:13+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__mail_count_done
+msgid "# Sent"
+msgstr "# Skickat"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__survey_access_mode
+msgid "Access Mode"
+msgstr "Åtkomstläge"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
+msgid "Add existing contacts..."
+msgstr "Lägg till befintliga kontakter..."
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__emails
+msgid "Additional emails"
+msgstr "Ytterligare e-postmeddelanden"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_type__after_sub
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_type__after_sub
+msgid "After each registration"
+msgstr "Efter varje registrering"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_type__after_survey
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_type__after_survey
+msgid "After the survey"
+msgstr "Efter undersökningen"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__deadline
+msgid "Answer deadline"
+msgstr "Svar på deadline"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__registration_id
+msgid "Attendee"
+msgstr "Deltagare"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__author_id
+msgid "Author"
+msgstr "Författaren"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__mailing_on_mailing_list
+msgid "Based on Mailing Lists"
+msgstr "Baserat på e-postlistor"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_type__before_survey
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_type__before_survey
+msgid "Before the survey"
+msgstr "Före undersökningen"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
+msgid "Close"
+msgstr "Nära"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_survey__survey_mail_ids
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_form
+msgid "Communication"
+msgstr "Kommunikation"
+
+#. module: survey_mail
+#: model:ir.model.fields,help:survey_mail.field_survey_mail__mail_registration_ids
+msgid "Communication related to survey registrations"
+msgstr "Kommunikation relaterad till registreringar av undersökningar"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_form
+msgid "Contact Attendees"
+msgstr "Kontakt Deltagare"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
+msgid "Continue with Invitation"
+msgstr "Fortsätt med inbjudan"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__create_uid
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__create_uid
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__create_uid
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__create_date
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__create_date
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__create_date
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.email_designer_snippets
+msgid "Custom Snippet"
+msgstr "Custom Snippet"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_survey__date_begin
+msgid "Date Begin"
+msgstr "Datum början"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_survey__date_end
+msgid "Date End"
+msgstr "Datum Slut"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_unit__days
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_unit__days
+msgid "Days"
+msgstr "Dagar"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__display_name
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__display_name
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__display_name
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__display_name
+msgid "Display Name"
+msgstr "Visningsnamn"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__sequence
+msgid "Display order"
+msgstr "Visa order"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_mail_template
+msgid "Email Templates"
+msgstr "E-postmallar"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "E-postredigeringsguide"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__existing_partner_ids
+msgid "Existing Partner"
+msgstr "Befintlig partner"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__existing_emails
+msgid "Existing emails"
+msgstr "Befintliga e-postmeddelanden"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__mail_state
+msgid "Global communication Status"
+msgstr "Global kommunikation Status"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__existing_mode
+msgid "Handle existing"
+msgstr "Hantera befintliga"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_unit__hours
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_unit__hours
+msgid "Hours"
+msgstr "Timmar"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__id
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__id
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__id
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__id
+msgid "ID"
+msgstr "ID"
+
+#. module: survey_mail
+#: model:ir.model.fields,help:survey_mail.field_survey_participant_invite__survey_users_login_required
+msgid ""
+"If checked, users have to login before answering even with a valid pollett."
+msgstr ""
+"Om markerad måste användare logga in innan de kan svara, även med en giltig "
+"token."
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_unit__now
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_unit__now
+msgid "Immediately"
+msgstr "Omedelbart"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__interval_nbr
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__interval_nbr
+msgid "Interval"
+msgstr "Intervall"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_form
+msgid "Invite"
+msgstr "Inbjudan"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/models/survey_survey.p.py:0
+#: code:addons/survey_mail/models/survey_survey.py:0
+msgid "Invite Participant"
+msgstr "Gäst Deltagare"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_form
+msgid "Invite Participants"
+msgstr "Bjud in deltagare"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__write_uid
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__write_uid
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__write_uid
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__write_date
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__write_date
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__write_date
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad den"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__notification_type__mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__notification_type__mail
+msgid "Mail"
+msgstr "Post"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__mail_registration_ids
+msgid "Mail Registration"
+msgstr "Registrering per post"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__scheduler_id
+msgid "Mail Scheduler"
+msgstr "Schemaläggare för e-post"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_survey_type_mail
+msgid "Mail Scheduling on Survey"
+msgstr "Schemaläggning av post på undersökning"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__mail_sent
+msgid "Mail Sent"
+msgstr "Mail skickat"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__contact_list_ids
+msgid "Mailing Lists"
+msgstr "Mailinglistor"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/wizard/mailing_mailing_test.p.py:0
+#: code:addons/survey_mail/wizard/mailing_mailing_test.py:0
+msgid "Mailing addresses incorrect: %s"
+msgstr "Felaktiga e-postadresser: %s"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_mailing_mailing
+msgid "Mass Mailing"
+msgstr "Marknadsföring per e-post"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_unit__months
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_unit__months
+msgid "Months"
+msgstr "Månader"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_participant_invite__existing_mode__new
+msgid "New invite"
+msgstr "Ny inbjudan"
+
+#. module: survey_mail
+#: model_terms:ir.actions.act_window,help:survey_mail.action_survey_mail
+msgid "Nothing Scheduled yet!"
+msgstr "Inget planerat ännu!"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/wizard/survery_participant_invite.p.py:0
+#: code:addons/survey_mail/wizard/survery_participant_invite.py:0
+msgid "Please enter at least one valid recipient."
+msgstr "Vänligen ange minst en giltig mottagare."
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__partner_ids
+msgid "Recipients"
+msgstr "Mottagare"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__mailing_model_id
+msgid "Recipients Model"
+msgstr "Mottagare Modell"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_survey_mail_registration
+msgid "Registration Mail Scheduler"
+msgstr "Schemaläggare för registrering av e-post"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_mail_form
+msgid "Registration Mails"
+msgstr "Registreringsmeddelanden"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_mail_form
+msgid "Registration mail"
+msgstr "Registreringsbrev"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__survey_users_login_required
+msgid "Require Login"
+msgstr "Kräver inloggning"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_participant_invite__existing_mode__resend
+msgid "Resend invite"
+msgstr "Skicka inbjudan på nytt"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__mail_state__running
+msgid "Running"
+msgstr "Drift"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_mailing_mailing_test
+msgid "Sample Mail Wizard"
+msgstr "Exempel på e-postguide"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__scheduled_date
+msgid "Schedule Date"
+msgstr "Schema Datum"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__mail_state__scheduled
+msgid "Scheduled"
+msgstr "Planerad"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__scheduled_date
+msgid "Scheduled Time"
+msgstr "Schemalagd tid"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__notification_type
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__notification_type
+msgid "Send"
+msgstr "Skicka"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__mail_done
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__mail_state__sent
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_mail_form
+msgid "Sent"
+msgstr "Skickat"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/wizard/survery_participant_invite.p.py:0
+#: code:addons/survey_mail/wizard/survery_participant_invite.py:0
+msgid "Some emails you just entered are incorrect: %s"
+msgstr "Vissa e-postmeddelanden som du just angav är felaktiga: %s"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.s_survey_invitation_button
+msgid "Start Survey"
+msgstr "Starta enkät"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_survey_survey
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__survey_id
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__survey_id
+msgid "Survey"
+msgstr "Enkät"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_survey_mail
+msgid "Survey Automated Mailing"
+msgstr "Automatiserat utskick av enkät"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.email_designer_snippets
+msgid "Survey Invitation Button"
+msgstr "Knapp för inbjudan till enkät"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
+msgid "Survey Link"
+msgstr "Enkätslänk"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_mail_form
+msgid "Survey Mail Scheduler"
+msgstr "Schemaläggare för enkätutskick"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_mail_tree
+msgid "Survey Mail Schedulers"
+msgstr "Schemaläggare av enkätutskick"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_survey_participant_invite
+msgid "Survey Participant Invite"
+msgstr "Inbjudan till enkätsdeltagare"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/models/survey_mail.p.py:0
+#: code:addons/survey_mail/models/survey_mail.py:0
+#: code:addons/survey_mail/survey.p.py:0 code:addons/survey_mail/survey.py:0
+msgid ""
+"Survey Scheduler for:\n"
+"  - Survey: %(survey_name)s (%(survey_id)s)\n"
+"  - Scheduled: %(date)s\n"
+"  - Template: %(template_name)s (%(template_id)s)\n"
+"\n"
+"Failed with error:\n"
+"  - %(error)s\n"
+"\n"
+"You receive this email because you are:\n"
+"  - the organizer of the survey,\n"
+"  - or the responsible of the survey,\n"
+"  - or the last writer of the template.\n"
+msgstr ""
+"Schemaläggare för enkäter för:\n"
+"  - Undersökning: %(survey_name)s (%(survey_id)s)\n"
+"  - Schemalagd: %(date)s\n"
+"  - Mall: %(template_name)s (%(template_id)s)\n"
+"\n"
+"Misslyckades med fel:\n"
+"  - %(error)s\n"
+"\n"
+"Du får detta e-postmeddelande eftersom du är:\n"
+"  - organisatör av undersökningen,\n"
+"  - eller ansvarig för undersökningen,\n"
+"  - eller den sista skribenten av mallen.\n"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__survey_start_url
+#: model:ir.model.fields,field_description:survey_mail.field_survey_user_input__survey_start_url
+msgid "Survey URL"
+msgstr "EnkätURL"
+
+#. module: survey_mail
+#: model:ir.model,name:survey_mail.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Enkät användarsvar"
+
+#. module: survey_mail
+#: model:ir.actions.server,name:survey_mail.survey_mail_scheduler_ir_actions_server
+msgid "Survey: Survey Mail Scheduler"
+msgstr "Undersökning: Schemaläggare för enkätutskick"
+
+#. module: survey_mail
+#: model:ir.actions.act_window,name:survey_mail.action_survey_mail
+msgid "Surveys Mail Schedulers"
+msgstr "Enkäter Mail Schedulers"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__template_ref
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__template_ref
+msgid "Template"
+msgstr "Mall"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__template_model_id
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__template_model_id
+msgid "Template Model"
+msgstr "Modell för mall"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/wizard/mailing_mailing_test.p.py:0
+#: code:addons/survey_mail/wizard/mailing_mailing_test.py:0
+msgid "Test mailing could not be sent to %s:"
+msgstr "Testutskicket kunde inte skickas till %s:"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/wizard/mailing_mailing_test.p.py:0
+#: code:addons/survey_mail/wizard/mailing_mailing_test.py:0
+msgid "Test mailing successfully sent to %s"
+msgstr "Testutskick skickat till %s"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/wizard/survery_participant_invite.p.py:0
+#: code:addons/survey_mail/wizard/survery_participant_invite.py:0
+msgid ""
+"The following recipients have no user account: %s. You should create user "
+"accounts for them or allow external signup in configuration."
+msgstr ""
+"Följande mottagare har inget användarkonto: %s. Du bör skapa användarkonton "
+"för dem eller tillåta extern registrering i konfigurationen."
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/models/survey_mail.p.py:0
+#: code:addons/survey_mail/models/survey_mail.py:0
+#: code:addons/survey_mail/survey.p.py:0 code:addons/survey_mail/survey.py:0
+msgid ""
+"The template which is referenced should be coming from %(model_name)s model."
+msgstr "Den mall som refereras till ska komma från %(model_name)s modell."
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/wizard/survery_participant_invite.p.py:0
+#: code:addons/survey_mail/wizard/survery_participant_invite.py:0
+msgid ""
+"This survey does not allow external people to participate. You should "
+"create user accounts or update survey access mode accordingly."
+msgstr ""
+"Den här undersökningen tillåter inte att externa personer deltar. Du bör "
+"skapa användarkonton eller uppdatera undersökningens åtkomstläge i enlighet "
+"med detta."
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__interval_type
+msgid "Trigger"
+msgstr "Avtryckare"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__interval_type
+msgid "Trigger "
+msgstr "Avtryckare "
+
+#. module: survey_mail
+#: model_terms:ir.actions.act_window,help:survey_mail.action_survey_mail
+msgid ""
+"Under this technical menu you will find all scheduled communication related "
+"to your surveys."
+msgstr ""
+"Under denna tekniska meny hittar du all schemalagd kommunikation som rör "
+"dina undersökningar."
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__interval_unit
+#: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__interval_unit
+msgid "Unit"
+msgstr "Enhet"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__survey_users_can_signup
+msgid "Users can signup"
+msgstr "Användare kan registrera sig"
+
+#. module: survey_mail
+#. odoo-python
+#: code:addons/survey_mail/models/survey_mail.p.py:0
+#: code:addons/survey_mail/models/survey_mail.py:0
+#: code:addons/survey_mail/survey.p.py:0 code:addons/survey_mail/survey.py:0
+msgid "WARNING: survey Scheduler Error for survey: %s"
+msgstr "VARNING: Fel i schemaläggningsprogrammet för undersökningen: %s"
+
+#. module: survey_mail
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_unit__weeks
+#: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__interval_unit__weeks
+msgid "Weeks"
+msgstr "Veckor"
+
+#. module: survey_mail
+#: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
+msgid ""
+"e.g.  'Rick Sanchez' <rick_sanchez@example.com>, hictor_vugo@example.com"
+msgstr ""
+"t.ex. \"Rick Sanchez\" <rick_sanchez@example.com>, hictor_vugo@example.com"
+
+#. module: survey_mail
+#: model:ir.model.fields,field_description:survey_mail.field_survey_mail__survey_id
+msgid "survey"
+msgstr "undersökning"
