@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 13:52+0000\n"
+"PO-Revision-Date: 2025-09-29 15:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: survey_website
+#: model:ir.model.fields,field_description:survey_website.field_survey_question__color
+#: model:ir.model.fields,field_description:survey_website.field_survey_question_answer__color
+msgid "Color"
+msgstr "Färg"
+
+#. module: survey_website
+#: model:ir.model,name:survey_website.model_survey_survey
+msgid "Survey"
+msgstr "Enkät"
+
+#. module: survey_website
+#: model:ir.model,name:survey_website.model_survey_question_answer
+msgid "Survey Label"
+msgstr "Undersökningsetikett"
+
+#. module: survey_website
+#: model:ir.model,name:survey_website.model_survey_question
+msgid "Survey Question"
+msgstr "Enkätfråga"
