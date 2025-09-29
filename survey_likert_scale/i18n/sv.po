@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_likert_scale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 13:48+0000\n"
+"PO-Revision-Date: 2025-09-29 13:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__create_uid
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__create_date
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__display_name
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__display_name
+msgid "Display Name"
+msgstr "Visningsnamn"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__id
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__id
+msgid "ID"
+msgstr "ID"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__write_uid
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__write_date
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad den"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_survey_question__is_likert_scale
+msgid "Likert Scale"
+msgstr "Likert-skala"
+
+#. module: survey_likert_scale
+#: model:ir.actions.act_window,name:survey_likert_scale.action_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_survey_question__likert_scale_template_id
+#: model:ir.ui.menu,name:survey_likert_scale.menu_likert_scale
+#: model_terms:ir.ui.view,arch_db:survey_likert_scale.view_likert_scale_form
+#: model_terms:ir.ui.view,arch_db:survey_likert_scale.view_likert_scale_tree
+msgid "Likert Scale Template"
+msgstr "Mall för Likert-skala"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__name
+msgid "Name"
+msgstr "Namn"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template__option_ids
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__option
+msgid "Option"
+msgstr "Alternativ"
+
+#. module: survey_likert_scale
+#: model_terms:ir.ui.view,arch_db:survey_likert_scale.view_likert_scale_form
+msgid "Options"
+msgstr "Alternativ"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__score
+msgid "Score"
+msgstr "Poäng"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__sequence
+msgid "Sequence"
+msgstr "Sekvens"
+
+#. module: survey_likert_scale
+#: model:ir.model,name:survey_likert_scale.model_survey_question
+msgid "Survey Question"
+msgstr "Enkätfråga"
+
+#. module: survey_likert_scale
+#: model:ir.model.fields,field_description:survey_likert_scale.field_likert_scale_template_options__template_id
+msgid "Template"
+msgstr "Mall"
+
+#. module: survey_likert_scale
+#: model:ir.model,name:survey_likert_scale.model_likert_scale_template
+msgid "likert.scale.template"
+msgstr "likert.skala.mall"
+
+#. module: survey_likert_scale
+#: model:ir.model,name:survey_likert_scale.model_likert_scale_template_options
+msgid "likert.scale.template.options"
+msgstr "likert.skala.mall.alternativ"
