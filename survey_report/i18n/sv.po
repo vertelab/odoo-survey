@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 13:50+0000\n"
+"PO-Revision-Date: 2025-09-29 16:16+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: survey_report
+#: model:ir.model.fields,field_description:survey_report.field_survey_user_input_line__value_numerical_box_average
+msgid "Average Numerical answer"
+msgstr "Genomsnittligt numeriskt svar"
+
+#. module: survey_report
+#: model:ir.model.fields,field_description:survey_report.field_survey_user_input_line__answer_score_average
+msgid "Average Score"
+msgstr "Genomsnittlig poäng"
+
+#. module: survey_report
+#: model:ir.model.fields,field_description:survey_report.field_survey_user_input_line__value_numerical_box_max
+msgid "Maximum Numerical answer"
+msgstr "Maximalt numeriskt svar"
+
+#. module: survey_report
+#: model:ir.model.fields,field_description:survey_report.field_survey_user_input_line__answer_score_max
+msgid "Maximum Score"
+msgstr "Maximal poäng"
+
+#. module: survey_report
+#: model:ir.model.fields,field_description:survey_report.field_survey_user_input_line__value_numerical_box_min
+msgid "Minimum Numerical answer"
+msgstr "Minimalt numerisk svar"
+
+#. module: survey_report
+#: model:ir.model.fields,field_description:survey_report.field_survey_user_input_line__answer_score_min
+msgid "Minimum Score"
+msgstr "Minimal poäng"
+
+#. module: survey_report
+#: model_terms:ir.ui.view,arch_db:survey_report.survey_response_line_view_search
+msgid "Question"
+msgstr "Fråga"
+
+#. module: survey_report
+#: model:ir.model.fields,field_description:survey_report.field_survey_user_input_line__question_text
+msgid "Question Text"
+msgstr "Frågotext"
+
+#. module: survey_report
+#: model:ir.model,name:survey_report.model_survey_survey
+msgid "Survey"
+msgstr "Enkät"
+
+#. module: survey_report
+#: model_terms:ir.ui.view,arch_db:survey_report.survey_response_line_view_pivot
+msgid "Survey Answer Line"
+msgstr "Enkät svarsrad"
+
+#. module: survey_report
+#: model:ir.model,name:survey_report.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr "Användarinmatningsrad för undersökning"
