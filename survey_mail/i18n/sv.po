@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0-20250925\n"
+"Project-Id-Version: Odoo Server 18.0-20251205\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 13:48+0000\n"
-"PO-Revision-Date: 2025-09-29 16:13+0200\n"
+"POT-Creation-Date: 2025-12-08 14:46+0000\n"
+"PO-Revision-Date: 2025-12-08 16:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -52,7 +52,7 @@ msgstr "Efter undersökningen"
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__deadline
 msgid "Answer deadline"
-msgstr "Svar på deadline"
+msgstr "Svar på tidsfrist"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__registration_id
@@ -78,7 +78,7 @@ msgstr "Före undersökningen"
 #. module: survey_mail
 #: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
 msgid "Close"
-msgstr "Nära"
+msgstr "Stäng"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_survey__survey_mail_ids
@@ -120,17 +120,17 @@ msgstr "Skapad den"
 #. module: survey_mail
 #: model_terms:ir.ui.view,arch_db:survey_mail.email_designer_snippets
 msgid "Custom Snippet"
-msgstr "Custom Snippet"
+msgstr "Anpassad snippet"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_survey__date_begin
 msgid "Date Begin"
-msgstr "Datum början"
+msgstr "Startdatum"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_survey__date_end
 msgid "Date End"
-msgstr "Datum Slut"
+msgstr "Slutdatum"
 
 #. module: survey_mail
 #: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_unit__days
@@ -149,7 +149,7 @@ msgstr "Visningsnamn"
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail__sequence
 msgid "Display order"
-msgstr "Visa order"
+msgstr "Visningsordning"
 
 #. module: survey_mail
 #: model:ir.model,name:survey_mail.model_mail_template
@@ -169,7 +169,7 @@ msgstr "Befintlig partner"
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__existing_emails
 msgid "Existing emails"
-msgstr "Befintliga e-postmeddelanden"
+msgstr "Befintlig e-post"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail__mail_state
@@ -198,10 +198,10 @@ msgstr "ID"
 #. module: survey_mail
 #: model:ir.model.fields,help:survey_mail.field_survey_participant_invite__survey_users_login_required
 msgid ""
-"If checked, users have to login before answering even with a valid pollett."
+"If checked, users have to login before answering even with a valid token."
 msgstr ""
-"Om markerad måste användare logga in innan de kan svara, även med en giltig "
-"token."
+"Om markerad, användare måste logga in innan de kan svara, även med en "
+"giltig pollett."
 
 #. module: survey_mail
 #: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__interval_unit__now
@@ -225,13 +225,13 @@ msgstr "Inbjudan"
 #: code:addons/survey_mail/models/survey_survey.p.py:0
 #: code:addons/survey_mail/models/survey_survey.py:0
 msgid "Invite Participant"
-msgstr "Gäst Deltagare"
+msgstr "Inbjuden deltagare"
 
 #. module: survey_mail
 #: model_terms:ir.ui.view,arch_db:survey_mail.survey_participant_invite_view_form
 #: model_terms:ir.ui.view,arch_db:survey_mail.view_survey_form
 msgid "Invite Participants"
-msgstr "Bjud in deltagare"
+msgstr "Inbjudna deltagare"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail__write_uid
@@ -253,12 +253,12 @@ msgstr "Senast uppdaterad den"
 #: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__notification_type__mail
 #: model:ir.model.fields.selection,name:survey_mail.selection__survey_type_mail__notification_type__mail
 msgid "Mail"
-msgstr "Post"
+msgstr "E-post"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail__mail_registration_ids
 msgid "Mail Registration"
-msgstr "Registrering per post"
+msgstr "Registrering per e-post"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__scheduler_id
@@ -268,17 +268,17 @@ msgstr "Schemaläggare för e-post"
 #. module: survey_mail
 #: model:ir.model,name:survey_mail.model_survey_type_mail
 msgid "Mail Scheduling on Survey"
-msgstr "Schemaläggning av post på undersökning"
+msgstr "Schemaläggning av e-post på undersökning"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail_registration__mail_sent
 msgid "Mail Sent"
-msgstr "Mail skickat"
+msgstr "E-post skickat"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__contact_list_ids
 msgid "Mailing Lists"
-msgstr "Mailinglistor"
+msgstr "E-postlistor"
 
 #. module: survey_mail
 #. odoo-python
@@ -323,7 +323,7 @@ msgstr "Mottagare"
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_participant_invite__mailing_model_id
 msgid "Recipients Model"
-msgstr "Mottagare Modell"
+msgstr "Mottagares modell"
 
 #. module: survey_mail
 #: model:ir.model,name:survey_mail.model_survey_mail_registration
@@ -353,7 +353,7 @@ msgstr "Skicka inbjudan på nytt"
 #. module: survey_mail
 #: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__mail_state__running
 msgid "Running"
-msgstr "Drift"
+msgstr "Körning"
 
 #. module: survey_mail
 #: model:ir.model,name:survey_mail.model_mailing_mailing_test
@@ -363,7 +363,7 @@ msgstr "Exempel på e-postguide"
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail__scheduled_date
 msgid "Schedule Date"
-msgstr "Schema Datum"
+msgstr "Schemalagt datum"
 
 #. module: survey_mail
 #: model:ir.model.fields.selection,name:survey_mail.selection__survey_mail__mail_state__scheduled
@@ -500,7 +500,7 @@ msgstr "Mall"
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail__template_model_id
 #: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__template_model_id
 msgid "Template Model"
-msgstr "Modell för mall"
+msgstr "Modellmall"
 
 #. module: survey_mail
 #. odoo-python
@@ -551,12 +551,12 @@ msgstr ""
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_type_mail__interval_type
 msgid "Trigger"
-msgstr "Avtryckare"
+msgstr "Utlösare"
 
 #. module: survey_mail
 #: model:ir.model.fields,field_description:survey_mail.field_survey_mail__interval_type
 msgid "Trigger "
-msgstr "Avtryckare "
+msgstr "Utlösare "
 
 #. module: survey_mail
 #: model_terms:ir.actions.act_window,help:survey_mail.action_survey_mail
