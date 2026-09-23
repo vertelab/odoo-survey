@@ -1,7 +1,6 @@
 from random import randint
 from odoo import models, fields, api
 
-
 COLOR_MAPPING = {
     1: "#F06050",
     2: "#F4A460",
