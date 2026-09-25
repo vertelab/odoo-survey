@@ -20,10 +20,19 @@
 ##############################################################################
 {   'name': 'Survey: Website',
     'version': '18.0.1.0.0',
-    'summary': 'Adds better template handling ',
-    'description': """
-     Define templates and join those with surveys
-    """,
+    'summary': 'Adds better template handling.',
+    'description': '''
+Website
+=======
+
+    Adds better template handling.
+
+    Features:
+
+        - Web integration: Exposes HTTP endpoints for external systems.
+        - UI Integration: Extends 4 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on survey.question, survey.question.answer, survey.survey.
+    ''',
     'category': 'Sales',
     'license': 'AGPL-3',
     'author': 'Vertel AB',

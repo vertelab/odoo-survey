@@ -20,12 +20,20 @@
 ##############################################################################
 {
     "name": "Survey: Manual Review",
-    "version": "1.0.0",
+    'version': '18.0.1.0.0',
     'summary': 'Make it so that one can case by case give a passing grade to an survey.',
-    'description': """
-Make it so that one can case by case give a passing grade to an survey.
-Useful when you have an open question that a person has to read before marking it as correct.
-    """,
+    'description': '''
+Manual Review
+=============
+
+    Make it so that one can case by case give a passing grade to an survey.
+    Useful when you have an open question that a person has to read before marking it as correct.
+
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on slide.channel, survey.survey, survey.user_input.
+    ''',
 
     'category': 'Sales',
     'license': 'AGPL-3',

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survey: Manual Review &mdash; Vertel for Odoo</title>
+  <title>Survey: Mail &mdash; Vertel for Odoo</title>
   <style>
     :root { --navy:#0F172A; --darkBg:#1E293B; --white:#F8FAFC; --gray:#94A3B8;
              --lightGray:#E2E8F0; --brand:#930a57; --brand2:#8105a7; }
@@ -43,8 +43,8 @@
 </head>
 <body>
 <div class="hero">
-  <h1>Survey: Manual Review</h1>
-  <p class="subtitle">Make it so that one can case by case give a passing grade to an survey.</p>
+  <h1>Survey: Mail</h1>
+  <p class="subtitle">Adds better mail delivery.</p>
   <div class="meta">
     <span>Odoo 18.0</span><span>&middot;</span>
     <span>Sales</span><span>&middot;</span>
@@ -54,38 +54,41 @@
 <div class="container">
   <section id="overview">
     <h2>Overview</h2>
-    <p>Make it so that one can case by case give a passing grade to an survey.</p>
-    <p>It introduces the model(s) <code>Survey</code>, <code>SurveyUserInput</code>, <code>Survey</code> to handle this workflow.</p>
+    <p>Adds better mail delivery.</p>
+    <p>It introduces the model(s) <code>SurveyUserInput</code>, <code>SurveyTypeMail</code>, <code>SurveyMailScheduler</code> to handle this workflow.</p>
+    <p>It extends Odoo's email templates.</p>
   </section>
   <section id="features">
     <h2>Key Features</h2>
     <div class="feature-grid">
-      <div class="feature-card"><h4>Dedicated data model</h4><p>Adds its own models: Survey, SurveyUserInput, Survey.</p></div>
-      <div class="feature-card"><h4>Actions</h4><p>Adds action_show_surveys.</p></div>
-      <div class="feature-card"><h4>UI integration</h4><p>Extends 2 view(s) in the Odoo interface.</p></div>
+      <div class="feature-card"><h4>Dedicated data model</h4><p>Adds its own models: SurveyUserInput, SurveyTypeMail, SurveyMailScheduler.</p></div>
+      <div class="feature-card"><h4>Automation</h4><p>Scheduled jobs: Survey: Survey Mail Scheduler, Survey: Survey Mail Scheduler.</p></div>
+      <div class="feature-card"><h4>Guided wizards</h4><p>Step-by-step dialogs for data entry.</p></div>
+      <div class="feature-card"><h4>Actions</h4><p>Adds action_mass_mailing_attendees, action_invite_contacts, action_invite_participants.</p></div>
+      <div class="feature-card"><h4>UI integration</h4><p>Extends 12 view(s) in the Odoo interface.</p></div>
     </div>
   </section>
   <section id="screenshots">
     <h2>Module Graphics</h2>
     <div class="screenshots">
       <figure>
-        <img src="icon.png" alt="Survey: Manual Review icon" width="140" height="140">
+        <img src="icon.png" alt="Survey: Mail icon" width="140" height="140">
         <figcaption>Icon &mdash; 140 &times; 140 px</figcaption>
       </figure>
       <figure>
-        <img src="banner.png" alt="Survey: Manual Review banner" width="560" height="280">
+        <img src="banner.png" alt="Survey: Mail banner" width="560" height="280">
         <figcaption>Banner &mdash; 560 &times; 280 px</figcaption>
       </figure>
     </div>
   </section>
   <section id="dependencies">
     <h2>Dependencies</h2>
-    <ul><li><code>survey</code></li><li><code>website_slides</code></li></ul>
+    <ul><li><code>survey</code></li><li><code>barcodes</code></li><li><code>base_setup</code></li><li><code>mail</code></li><li><code>phone_validation</code></li><li><code>portal</code></li><li><code>utm</code></li><li><code>mass_mailing</code></li></ul>
     <p><small>Requires <strong>Odoo 18.0</strong> or later.</small></p>
   </section>
   <section id="installation">
     <h2>Installation</h2>
-    <p>Install the module <code>survey_manual_review</code> from the Odoo Apps menu,
+    <p>Install the module <code>survey_mail</code> from the Odoo Apps menu,
        or deploy it via the Vertel SaltStack pipeline.</p>
   </section>
   <section id="support">
@@ -95,7 +98,7 @@
   </section>
 </div>
 <footer>
-  <p><strong>Survey: Manual Review</strong> &mdash; by <a href="https://vertel.se">Vertel Sverige AB</a></p>
+  <p><strong>Survey: Mail</strong> &mdash; by <a href="https://vertel.se">Vertel Sverige AB</a></p>
   <p><a href="https://vertel.se">vertel.se</a> &middot;
      <a href="mailto:info@vertel.se">info@vertel.se</a></p>
 </footer>

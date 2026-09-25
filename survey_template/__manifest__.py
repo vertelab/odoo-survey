@@ -22,12 +22,18 @@
 {
     'name': 'Survey: Template',
     'version': '18.0.1.0.0',
-    'summary': 'Adds better template handling ',
-    'description': """
+    'summary': 'Adds better template handling.',
+    'description': '''
+Template
+========
 
-    Define templates and join those with surveys
+    Adds better template handling.
 
-    """,
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on survey.survey.
+    ''',
 
     'category': 'Sales',
     'license': 'AGPL-3',

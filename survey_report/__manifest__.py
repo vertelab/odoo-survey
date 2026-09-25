@@ -21,11 +21,19 @@
 
 {
     "name": "Survey: Report",
-    "version": "1.0",
-    'summary': 'Improves Survey Report',
-    'description': """
-    Bridge module to improve survey report.
-    """,
+    'version': '18.0.1.1.0',
+    'summary': 'Improves Survey Report.',
+    'description': '''
+Report
+======
+
+    Improves Survey Report.
+
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on survey.survey, survey.user_input.line.
+    ''',
     'category': 'Survey',
     'license': 'AGPL-3',
     'author': 'Vertel AB',
