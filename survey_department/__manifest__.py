@@ -51,4 +51,3 @@ Department
     'installable': True,
     'auto_install': True,
 }
-# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
