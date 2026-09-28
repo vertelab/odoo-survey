@@ -20,19 +20,13 @@
 ##############################################################################
 {
     "name": "Survey: Likert Scale",
-    'version': '18.0.1.1.0',
-    'summary': 'Adds Likert Scale.',
-    'description': '''
-Likert Scale
-============
-
-    Adds Likert Scale.
-
-    Features:
-
-        - UI Integration: Extends 4 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on likert.scale.template, likert.scale.template.options, survey.question.
-    ''',
+    "version": "1.0",
+    'summary': 'Adds Likert Scale',
+    'description': """
+    
+    Template for Likert Scale.
+    
+    """,
     'category': 'Sales',
     'license': 'AGPL-3',
     'author': 'Vertel AB',

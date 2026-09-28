@@ -21,19 +21,15 @@
 
 {
     'name': 'Survey: Department',
-    'summary': 'Add department on surveys.',
-    'description': '''
-Department
-==========
-
-    Add department on surveys.
-
-    Features:
-
-        - UI Integration: Extends 2 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on hr.department, survey.survey.
-    ''',
-    'version': '18.0.1.0.0',
+    'summary': 'Add department on surveys',
+    'description': """
+        * Add department on survey
+        * My department filter
+        * My survey filter
+        * Department grouping, search
+        
+        """,
+    'version': '1.0',
     'category': 'Survey',
     'license': 'AGPL-3',
     'author': 'Vertel AB',
@@ -51,3 +47,4 @@ Department
     'installable': True,
     'auto_install': True,
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

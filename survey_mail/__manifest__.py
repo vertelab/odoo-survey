@@ -21,21 +21,13 @@
 
 {
     "name": "Survey: Mail",
-    'version': '18.0.1.1.0',
-    'summary': 'Adds better mail delivery.',
-    'description': '''
-Mail
-====
-
+    "version": "1.0",
+    'summary': 'Adds better mail delivery',
+    'description': """
+    
     Bridge module adding UX requirements to ease mass mailing of survey attendees.
-
-    Features:
-
-        - Automation: Scheduled jobs: Survey: Survey Mail Scheduler, Survey: Survey Mail Scheduler.
-        - Guided Wizards: Step-by-step dialogs for data entry.
-        - UI Integration: Extends 12 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on mail.template, mailing.mailing, scheduler_id, survey.mail.
-    ''',
+    
+    """,
     'category': 'Sales',
     'license': 'AGPL-3',
     'author': 'Vertel AB',
