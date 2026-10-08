@@ -18,29 +18,26 @@
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Survey: Manual Review",
-    "version": "1.0.0",
-    'summary': 'Make it so that one can case by case give a passing grade to an survey.',
-    'description': """
-Make it so that one can case by case give a passing grade to an survey.
-Useful when you have an open question that a person has to read before marking it as correct.
-    """,
 
-    'category': 'Sales',
+{
+    "name": "Survey: Report",
+    "version": "1.0",
+    'summary': 'Improves Survey Report',
+    'description': """
+    Bridge module to improve survey report.
+    """,
+    'category': 'Survey',
     'license': 'AGPL-3',
     'author': 'Vertel Sverige AB',
     'maintainer': 'Vertel Sverige AB',
     'contributor': '',
-    'website': "https://vertel.se/apps/odoo-survey/survey_manual_review",
-    'images': ['/static/description/banner.png'], # 560x280 px.
+    'website': "https://vertel.se/apps/odoo-survey/survey_report",
+    'images': ['/static/description/banner.png'],  # 560x280 px.
     'repository': 'https://github.com/vertelab/odoo-survey',
-    # Any module necessary for this one to work correctly
-        
-    "depends": ['survey','website_slides'],
+    "depends": ['survey',],
     'data': [
-        'views/survey_view.xml',
-   ],
+        'views/survey_user_views.xml'
+    ],
     "installable": True,
     "auto_install": False,
 }
