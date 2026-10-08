@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Odoo SA, Open Source Management Solution, third party addon
-#    Copyright (C) 2024- Vertel Sverige AB (<https://vertel.se>).
+#    Copyright (C) 2023- Vertel Sverige AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,30 +20,39 @@
 ##############################################################################
 
 {
-    'name': 'Survey: Template',
-    version': '1.0',
-    'summary': 'Adds better template handling ',
+    "name": "Survey: Mail",
+    "version": "1.0",
+    'summary': 'Adds better mail delivery',
     'description': """
-
-    Define templates and join those with surveys
-
+    
+    Bridge module adding UX requirements to ease mass mailing of survey attendees.
+    
     """,
-
     'category': 'Sales',
     'license': 'AGPL-3',
     'author': 'Vertel Sverige AB',
     'maintainer': 'Vertel Sverige AB',
     'contributor': '',
-    'website': "https://vertel.se/apps/odoo-survey/survey_template",
+    'website': "https://vertel.se/apps/odoo-survey/survey_mail",
     'images': ['/static/description/banner.png'], # 560x280 px.
     'repository': 'https://github.com/vertelab/odoo-survey',
     # Any module necessary for this one to work correctly
     
-    "depends": ['survey',],
+    "depends": ['survey', 'barcodes', 'base_setup', 'mail', 'phone_validation', 'portal', 'utm', 'mass_mailing'],
     'data': [
-        'data/survey_data.xml',
-        'views/survey_view.xml',
-       ],
+        'security/ir.model.access.csv',
+        'views/survey_mail.xml',
+        'views/survey_survey_view.xml',
+        'wizard/survery_participant_invite_view.xml',
+        'views/survey_user_input_view.xml',
+        # 'views/mailing_mailing_view.xml',
+        'data/ir_cron_data.xml',
+        # 'views/survey_question_view.xml',
+
+        # Snippets
+        'views/snippets/s_survey_button.xml',
+        'views/snippets_themes.xml',
+   ],
     "installable": True,
     "auto_install": False,
 }

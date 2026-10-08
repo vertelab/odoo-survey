@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution, third party addon
-#    Copyright (C) 2019-2024 Vertel Sverige AB (<http://vertel.se>).
+#    Odoo SA, Open Source Management Solution, third party addon
+#    Copyright (C) 2023- Vertel Sverige AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -15,36 +15,29 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 {
-    'name': 'Survey: Department',
-    'summary': 'Add department on surveys',
+    "name": "Survey: Report",
+    "version": "1.0",
+    'summary': 'Improves Survey Report',
     'description': """
-        * Add department on survey
-        * My department filter
-        * My survey filter
-        * Department grouping, search
-        
-        """,
-    'version': '1.0',
+    Bridge module to improve survey report.
+    """,
     'category': 'Survey',
     'license': 'AGPL-3',
     'author': 'Vertel Sverige AB',
     'maintainer': 'Vertel Sverige AB',
     'contributor': '',
-    'website': "https://vertel.se/apps/odoo-survey/survey_department",
+    'website': "https://vertel.se/apps/odoo-survey/survey_report",
     'images': ['/static/description/banner.png'],  # 560x280 px.
     'repository': 'https://github.com/vertelab/odoo-survey',
-    # Any module necessary for this one to work correctly
-    
-    'depends': ['survey', 'hr',],
+    "depends": ['survey',],
     'data': [
-        'views/survey_views.xml',
+        'views/survey_user_views.xml'
     ],
-    'installable': True,
-    'auto_install': True,
+    "installable": True,
+    "auto_install": False,
 }
-# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
