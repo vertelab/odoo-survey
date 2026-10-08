@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #   Odoo SA, Open Source Management Solution, third party addon
-#   Copyright (C) 2024- Vertel AB (<https://vertel.se>).
+#   Copyright (C) 2024- Vertel Sverige AB (<https://vertel.se>).
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as
@@ -18,17 +18,16 @@
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    'name': 'Survey: Website',
-    'version': '1.0',
+{   'name': 'Survey: Website',
+    'version': '18.0.1.0.0',
     'summary': 'Adds better template handling ',
     'description': """
      Define templates and join those with surveys
     """,
     'category': 'Sales',
     'license': 'AGPL-3',
-    'author': 'Vertel AB',
-    'maintainer': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
+    'maintainer': 'Vertel Sverige AB',
     'contributor': '',
     'website': "https://vertel.se/apps/odoo-survey/survey_template",
     'images': ['/static/description/banner.png'],  # 560x280 px.
